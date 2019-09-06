@@ -1,0 +1,26 @@
+
+
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+
+.fondoFormulario{
+  background-color: #E2DEDE;
+  width: 100%;
+  padding: 3%;
+  margin-top: 2%;
+  border-radius: 10px;
+    }
+
+body{
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+h2{text-align: center;
+color: white;
+margin-top: 1%}
+
+
+}
