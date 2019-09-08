@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+
+}
+header div.navegacion{
+  width: 100%;
+}
+header div.navegacion form.buscador{
+  float: left;
+}
+main.principal{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+}
+main.principal div.row div.miPerfil{
+  background-color: white;
+  border-radius: 10px;
+  display: block;
+  float: left;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+div.miPerfil img{
+  width: 50%;
+  border-radius: 50%;
+  align-items: center;
+}
+main.principal div.row div.miPerfil h3{
+
+}
+main.principal div.row div.miPerfil h5{
+text-align: left;
+}
+main.principal div.row div.miPerfil h4{
+text-align: left;
+font-weight: normal;
+font-size: 20px;
+}
+main.principal div.row div.novedades{
+  background-color: white;
+  border-radius: 10px;
+  display: block;
+  float: left;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+main.principal div.row div.novedades div.novedad{
+  background-color: #ACDDFA;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: #9FD9F7;
+  padding: 10px;
+  margin-bottom: 10px;
+overflow: hidden;
+}
+main.principal div.row div.novedades div.novedad img.imagenAmigo{
+width: 15%;
+border-radius: 50%;
+float: left;
+margin-bottom: 10px;
+border-color: black;
+border-width: 2px;
+}
+main.principal div.row div.novedades div.novedad h5{
+  display: block;
+  float: left;
+
+}
+main.principal div.row div.novedades div.novedad img.imagenPosteo{
+  width: 100%;
+  border-radius: 5px;
+}
+main.principal div.row div.publicidad{
+  background-color: white;
+  border-radius: 10px;
+  display: block;
+  float: left;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+main.principal div.row div.publicidad div.avisoPublicitario{
+  margin-bottom: 10px;
+}
+main.principal div.row div.publicidad img{
+  width: 100%;
+}
