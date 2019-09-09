@@ -1,3 +1,10 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+
+}
+
 
 
 input{
@@ -15,12 +22,56 @@ input{
 
 body{
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
 
-h2{text-align: center;
+h2{
+  text-align: center;
 color: white;
-margin-top: 1%}
+margin-top: 1%;
+}
+
+.media{
+  background-color: white;
+  color:black;
+}
+
+h5{
+  color: rgba(2,0,36,1);
+}
+
+.fondoRojo{
+
+}
+.fondoVerde{
+  background-color: green;
 
 
+}
+.fondoAmarillo{
+  display:flex;
+
+
+
+}
+
+.fondoGris{
+  background-color: white;
+}
+
+.fondoBlanco{
+  background-color: white;
+  color: black;
+
+
+  }
+
+img{
+  width:100%;
+
+
+}
+
+hombre{
+  padding-right: 20;
 }
