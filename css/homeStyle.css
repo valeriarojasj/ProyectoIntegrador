@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+}
+div.dropdown-menu{
+  padding: 10px;
+}
+nav.navbar a.navbar-brand img{
+  width: 58px;
+  over
+}
+div.navbar-collapse{
+
+}
+div.navbar-collapse ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+div.navbar-collapse ul.navbar-nav li{
+  font-size: 25px;
+}
