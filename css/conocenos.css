@@ -11,3 +11,11 @@ main div.row div.conocenos{
   border-radius: 10px;
   text-align: center;
 }
+
+nav a img{width: 50px;}
+
+.marca{
+  font-size: 16px;
+  font-family: 'Chilanka', cursive;
+  color:green;
+}

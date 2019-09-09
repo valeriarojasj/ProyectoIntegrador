@@ -93,3 +93,10 @@ main.principal div.row div.publicidad div.avisoPublicitario{
 main.principal div.row div.publicidad img{
   width: 100%;
 }
+
+.marca{
+  font-size: 16px;
+  font-family: 'Chilanka', cursive;
+  color:green;
+}
+nav a img{width: 50px;}
