@@ -53,3 +53,8 @@ nav a img{width: 50px;}
   font-family: 'Chilanka', cursive;
   color:green;
 }
+div#navbarSupportedContent ul{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
