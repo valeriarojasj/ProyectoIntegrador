@@ -29,9 +29,17 @@ div.navbar-collapse ul.navbar-nav li{
 
 nav a img{width: 50px;}
 
+div.carousel-item div.img img{
+  height: 80vh;
+  
+}
 .carrusel{
 
 }
+
+
+
+
 
 .marca{
   font-size: 16px;

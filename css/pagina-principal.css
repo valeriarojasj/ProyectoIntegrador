@@ -100,3 +100,9 @@ main.principal div.row div.publicidad img{
   color:green;
 }
 nav a img{width: 50px;}
+
+div#navbarSupportedContent ul{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
