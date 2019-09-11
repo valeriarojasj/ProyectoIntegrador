@@ -1,4 +1,13 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 
+}
+
+header nav a{
+  color: green;
+}
 
 input{
   font-family: 'Helvetica', fontawesome;
@@ -15,12 +24,121 @@ input{
 
 body{
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
 
-h2{text-align: center;
+h2{
+  text-align: center;
 color: white;
-margin-top: 1%}
+margin-top: 1%;
+}
+
+.media{
+  background-color: white;
+  color:black;
+}
+
+h5{
+  color: rgba(2,0,36,1);
+}
+
+.fondoRojo{
+  padding-right: 3%;
+
+}
+.fondoVerde{
 
 
 }
+.fondoAmarillo{
+  display:flex;
+  border: gray solid 1px;
+  background-color: white;
+
+
+}
+
+.fondoGris{
+  background-color: white;
+}
+
+.fondoBlanco{
+  background-color: white;
+  color: black;
+
+
+
+  }
+
+img{
+  width:100%;
+
+
+}
+
+.invitacionesTitulo{
+  color:white;
+  /*display: none;*/
+}
+
+.contactosTitulo{
+  color:white;
+    /*display: none;*/
+}
+
+.tituloSeccion{
+  color:white;
+}
+
+
+
+.hombre{
+  padding-right: 20;
+}
+
+nav a img{width: 50px;}
+
+.marca{
+  font-size: 16px;
+  font-family: 'Chilanka', cursive;
+  color:green;
+}
+
+.SeccionSuperior{
+  background-color: white;
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 20px;
+  text-align: center;
+  color:black
+
+}
+
+
+
+
+.fa-user-check{
+  color:green;
+}
+.seccionSaludo{
+  background-color: white;
+}
+.Saludo{color:black;}
+.TusContactos{
+  background-color: white;}
+.TusInvitaciones{
+    background-color: white;}
+
+a{
+  text-decoration: none;
+}
+.fa-user-times{
+  color:red;
+}
+
+
+/*@media only screen and (max-width: 600px) {
+  .invitacionesTitulo{
+    display: block;
+    color:white;
+  }*/
