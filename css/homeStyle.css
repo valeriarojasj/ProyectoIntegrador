@@ -29,6 +29,15 @@ div.navbar-collapse ul.navbar-nav li{
 
 nav a img{width: 50px;}
 
+div.carousel-item div.img img{
+  height: 80vh;
+
+}
+
+
+
+
+
 
 .marca{
   font-size: 16px;
@@ -36,9 +45,7 @@ nav a img{width: 50px;}
   color:green;
 }
 
-.carousel-item{
 
-}
 
 .fotoActividades{
 
@@ -60,17 +67,3 @@ text-align: center;
 align-items: baseline;
 
   }
-
-.columnas{
-
-}
-
-.filas{
-
-
-}
-
-.contenedor{
-
-
-}

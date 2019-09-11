@@ -19,3 +19,6 @@ nav a img{width: 50px;}
   font-family: 'Chilanka', cursive;
   color:green;
 }
+div.row{
+  width: 100%;
+}
