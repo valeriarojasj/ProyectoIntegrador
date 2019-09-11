@@ -24,17 +24,53 @@ div.navbar-collapse ul.navbar-nav{
 
 }
 div.navbar-collapse ul.navbar-nav li{
-  font-size: 25px;
+
 }
 
 nav a img{width: 50px;}
 
-.carrusel{
-
-}
 
 .marca{
   font-size: 16px;
   font-family: 'Chilanka', cursive;
   color:green;
+}
+
+.carousel-item{
+
+}
+
+.fotoActividades{
+
+max-height: 700px;
+}
+
+.areaCaption{
+background-color: rgba(255,255,255,0.3);
+
+}
+
+h4{
+
+  color: white;
+}
+
+.carousel-inner{
+text-align: center;
+align-items: baseline;
+
+  }
+
+.columnas{
+
+}
+
+.filas{
+
+
+}
+
+.contenedor{
+
+
 }
