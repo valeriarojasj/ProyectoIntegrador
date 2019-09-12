@@ -8,7 +8,7 @@ body{
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
   div.navegacion nav.navbar a.navbar-brand img{
-      width: 50%;
+      width: 58px;
   }
   div.perfil{
     padding: 20px;
@@ -57,4 +57,17 @@ div#navbarSupportedContent ul{
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+.texto{
+  padding:1%;
+}
+
+.textoIcono{
+  font-family: helvetica;
+  font-size: 10px;
+  text-align: center;
+}
+
+.icono{
+  text-align: center;
 }

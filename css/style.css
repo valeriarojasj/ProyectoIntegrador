@@ -2,7 +2,6 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-
 }
 
 header nav a{
@@ -36,6 +35,8 @@ margin-top: 1%;
 .media{
   background-color: white;
   color:black;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 h5{
@@ -43,19 +44,17 @@ h5{
 }
 
 .fondoRojo{
-  padding-right: 3%;
 
 }
+
 .fondoVerde{
-
-
+margin:0;
+padding-left: 2%;
 }
+
 .fondoAmarillo{
-  display:flex;
   border: gray solid 1px;
   background-color: white;
-
-
 }
 
 .fondoGris{
@@ -65,15 +64,10 @@ h5{
 .fondoBlanco{
   background-color: white;
   color: black;
-
-
-
   }
 
 img{
   width:100%;
-
-
 }
 
 .invitacionesTitulo{
@@ -90,13 +84,12 @@ img{
   color:white;
 }
 
-
-
 .hombre{
-  padding-right: 20;
 }
 
-nav a img{width: 50px;}
+nav a img{
+  width: 50px;
+}
 
 .marca{
   font-size: 16px;
@@ -110,32 +103,119 @@ nav a img{width: 50px;}
   font-family: Helvetica;
   font-size: 20px;
   text-align: center;
-  color:black
-
+  color:black;
 }
-
-
-
 
 .fa-user-check{
   color:green;
 }
-.seccionSaludo{
+
+.saludo{
+  color: black;
+}
+
+.TusContactos{
   background-color: white;
 }
-.Saludo{color:black;}
-.TusContactos{
-  background-color: white;}
+
 .TusInvitaciones{
-    background-color: white;}
+    background-color: white;
+  }
 
 a{
   text-decoration: none;
 }
+
 .fa-user-times{
   color:red;
 }
 
+}
+div.dropdown-menu{
+  padding: 10px;
+}
+
+nav.navbar a.navbar-brand img{
+  width: 58px;
+}
+
+div.navbar-collapse{
+}
+
+div.navbar-collapse ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.navbar-collapse ul.navbar-nav li{
+}
+
+.formularioLogin{
+}
+
+.Login{
+  width: 280px;
+  padding:10px;
+}
+
+.areaLogin{
+}
+
+.colorAzul{
+  color:#007bff;
+}
+
+.textoIcono{
+  font-family: helvetica;
+  font-size: 10px;
+  text-align: center;
+}
+
+.icono{
+  text-align: center;
+}
+
+.columnaTodo{
+padding-right:3%;
+padding-left: 3%;
+}
+
+.fotoPerfil{
+  border-radius: 150px;
+  width: 150px;
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+}
+
+.seccionSaludo{
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 3%;
+  padding-right:3%;
+  padding-top:1%;
+  padding-bottom:1%;
+  color: black;
+}
+
+.filaSaludo{
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.fotoInv{
+  padding:3%;
+  align-self:center;
+
+}
 
 /*@media only screen and (max-width: 600px) {
   .invitacionesTitulo{

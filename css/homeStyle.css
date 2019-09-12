@@ -3,40 +3,42 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body{
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
+
 div.dropdown-menu{
   padding: 10px;
 }
+
 nav.navbar a.navbar-brand img{
   width: 58px;
-  over
 }
+
 div.navbar-collapse{
 
 }
+
 div.navbar-collapse ul.navbar-nav{
   width: 95%;
   display: flex;
   justify-content: flex-end;
-
 }
+
 div.navbar-collapse ul.navbar-nav li{
 
 }
 
-nav a img{width: 50px;}
-
-div.carousel-item div.img img{
-  height: 80vh;
-
+nav a img{
+  width: 50px;
 }
 
+div.carousel-item div.img img{
 
 
-
+}
 
 
 .marca{
@@ -45,25 +47,31 @@ div.carousel-item div.img img{
   color:green;
 }
 
-
-
 .fotoActividades{
-
-max-height: 700px;
+width:70%;
 }
 
 .areaCaption{
 background-color: rgba(255,255,255,0.3);
-
 }
 
 h4{
-
   color: white;
 }
 
 .carousel-inner{
 text-align: center;
 align-items: baseline;
+margin-top: 2%;
+margin-bottom: 2%;
+width:50%;
+  }
 
+.Login{
+width: 280px;
+padding:10px;
+  }
+
+.colorAzul{
+color:#007bff;
   }

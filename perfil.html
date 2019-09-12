@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/perfil.css">
     <title>perfil</title>
   </head>
@@ -24,81 +26,82 @@
             <div class="buscador">
               <form class="form-inline my-2 my-lg-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><ion-icon name="search"></ion-icon></button>
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
               </form>
             </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                  <a class="nav-link" href="FAQ.html">Preguntas frecuentes</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="conocenos.html">Conocenos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="contactanos.html">Contactanos</a>
+                  <a class="nav-link" href="pagina-principal.html"><i class="fas fa-home icono"><span class=textoIcono><br>Principal</span></i></a>
               </li>
 
+              <li class="nav-item dropdown nav-item">
+                    <a class="nav-link   dropdown-toggle" data-toggle="dropdown" href="amigos.html" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends icono"><span class=textoIcono><br>Mis amigos</span></i></a>
+                  <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
+                    <a class="dropdown-item" href="amigos.html">Ver Mis amigos</a>
+                    <a class="dropdown-item" href="#">Buscar Contactos</a>
+                  </div>
 
-              <li class="nav-item">
-                  <a class="nav-link" href="#"><ion-icon name="people"></ion-icon><span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item dropdown nav-item active">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><ion-icon name="person"></ion-icon></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="perfil.html">Mi Perfil</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="home.html">Log out</a>
+
+              <li class="nav-item dropdown nav-item">
+
+          <a class="nav-link  active dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
+          <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
+            <a class="dropdown-item active" href="perfil.html">Ver Mi perfil</a>
+            <a class="dropdown-item" href="#">Otra Acción</a>
+            <a class="dropdown-item" href="home.html">Cerrar Sesión</a>
           </div>
         </li>
 
 
 
-        <li class="nav-item dropdown nav-item active">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><ion-icon name="mail"></ion-icon></a>
-    <div class="dropdown-menu">
+        <li class="nav-item dropdown nav-item">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-comments icono"><span class=textoIcono><br>Mis mensajes</span></i></a>
+    <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
       <a class="dropdown-item" href="#">Ver Mis Mensajes</a>
       <a class="dropdown-item" href="#">Enviar Mensaje</a>
       <a class="dropdown-item" href="#">Notificaciones</a>
     </div>
-  </li>
+    </li>
 
         </ul>
       </div>
-  </nav>
+    </nav>
       </div>
     </header>
     <div class="container">
 
       <div class="perfil">
         <div class="row">
-            <div class="col-md-2 col-sm-12">
+            <div class="col-md-2 col-sm-12 col-lg-2 col-xl-2 col-12">
               <img src="img/voluntaria.jpg" alt="">
             </div>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 col-lg-4 col-xl-4 col-4">
                 <h1>Mariana Diaz<br>Estudiante</h1>
             </div>
-            <div class="col-md-6 col-sm-12"></div>
+            <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6 col-6"></div>
           </div>
       </div>
       <section>
         <div class="Descripcion">
           <h3>Acerca de mi</h3>
           <div class="caja">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
         <div class="Descripcion">
           <h3>Intereses</h3>
           <div class="caja">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
+            <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
           </div>
         </div>
         <div class="Descripcion">
           <h3>Experiencia</h3>
           <div class="caja">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
         </div>
         </div>
         <div class="Descripcion">
@@ -119,12 +122,12 @@
         <div class="form-group col-md-4">
 
 
-
+  </div>
       </section>
 
 
 
-      </div>
+
 
 
 

@@ -8,83 +8,116 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <!-- script para fontawesome version 5 usando kit con codigo personal para mantener la ultima actualizacion-->
 <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/pagina-principal.css">
 <!-- link a mi css-->
   <link rel="stylesheet" href="css/style.css">
   </head>
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 ">
-  <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="navegacion">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="buscador">
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" href="pagina-principal.html"><i class="fas fa-home icono"><span class=textoIcono><br>Principal</span></i></a>
+          </li>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="home.html">Inicio <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="perfil.html">Mi Perfil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="amigos.html">Mis Amigos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="home.html">Cerrar sesión</a>
-      </li>
+          <li class="nav-item dropdown nav-item">
+                <a class="nav-link  active dropdown-toggle" data-toggle="dropdown" href="amigos.html" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends icono"><span class=textoIcono><br>Mis amigos</span></i></a>
+              <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
+                <a class="dropdown-item" href="amigos.html">Ver Mis amigos</a>
+                <a class="dropdown-item" href="#">Buscar Contactos</a>
+              </div>
+
+          </li>
+
+          <li class="nav-item dropdown nav-item">
+
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
+      <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
+        <a class="dropdown-item" href="perfil.html">Mi Perfil</a>
+        <a class="dropdown-item" href="#">Otra Acción</a>
+        <a class="dropdown-item" href="home.html">Cerrar Sesión</a>
+      </div>
+    </li>
+
+
+
+    <li class="nav-item dropdown nav-item">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-comments icono"><span class=textoIcono><br>Mis mensajes</span></i></a>
+<div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
+  <a class="dropdown-item" href="#">Ver Mis Mensajes</a>
+  <a class="dropdown-item" href="#">Enviar Mensaje</a>
+  <a class="dropdown-item" href="#">Notificaciones</a>
+</div>
+</li>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="&#xf002; Buscar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
-    </form>
   </div>
 </nav>
+  </div>
 </header>
 
   <body>
+
     <div class="container-fluid">
+
+
+
+
 
 
         <!-- aca comienza la pagina-->
 
 <div class="row filaTodo">
 
+
   <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 columnaTodo">
       <!-- Seccion de Saludo-->
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 seccionSaludo">
-            <h2 class="Saludo">Hola Mariana!</h2>
-          </div>
+        <div class="row filaSaludo ">
+
         </div>
 
       <!-- Seccion de Total contactos-->
         <div class="row">
+          <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 seccionSaludo d-flex media ">
+            <img class="fotoPerfil img-fluid self-align-center" src="img/voluntaria.jpg" alt="">
+            <div class="media-body">
+              <h2 class="saludo d-flex ">Hola Mariana!</h2>
+            </div>
+
+          </div>
           <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 mb-3 TusContactos">
-            <span class="align-middle mr-3"><i class="fas fa-user-friends"></i> Tus Contactos: 8   </span>
-            <span class="align-middle"><i class="fas fa-user-plus"></i>Agregar Contactos</span>
+
           </div>
           <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 mb-3 TusInvitaciones">
-            <p class="Saludo">Tienes 3 invitaciones</p>
-          </div>
+
         </div>
+  </div>
 
 
-
-          <!-- aca comienza la seccion de contactos-->
+          <!-- aca comienza la seccion de contactos e invitaciones-->
           <div class="row">
-
+            <!-- aca comienza la seccion de contactos-->
 
           <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 fondoRojo">
             <div class="contactosTitulo">
-              <h5 class="tituloSeccion">Tus Contactos</h5>
+              <h6 class="tituloSeccion">Mis Amigos (8)</h6>
             </div>
 
 
             <!-- aca empieza un par de contactos-->
-              <div class="row justify-content-between">
+              <div class="row ">
 
                 <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 fondoAmarillo  hombre">
 
@@ -106,7 +139,7 @@
 
                 </div>
 
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 fondoAmarillo   ">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 fondoAmarillo">
 
                   <div class="row">
 
@@ -115,7 +148,7 @@
 
                     </div>
 
-                    <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                    <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light media-body">
                         <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                       <h4>María García</h4>
                     <p>Aca va el texto del contacto der</p>
@@ -204,7 +237,7 @@
                     </div>
                   </div><!-- aca termina un par de contactos-->
                   <!-- aca empieza un par de contactos-->
-                    <div class="row justify-content-between">
+                    <div class="row ">
 
                       <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 fondoAmarillo  hombre ">
 
@@ -250,7 +283,7 @@
 
             <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 fondoVerde">
               <div class="invitacionesTitulo">
-                <h5 class="tituloSeccion" id="titulo2">Tus Invitaciones</h5>
+                <h6 class="tituloSeccion" id="titulo2">Mis Invitaciones (3)</h6>
               </div>
 
                 <!-- aca comienza una invitacion-->
@@ -260,7 +293,7 @@
                 <div class="row">
 
                   <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
-                      <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                      <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
                   </div>
 
                   <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
@@ -283,10 +316,10 @@
             <div class="row">
 
               <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
-                  <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                  <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv card-img img-fluid max-width:100% height:auto">
               </div>
 
-              <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+              <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light  media-body">
                 <a href="#"><i class="fas fa-user-check"></i></a>
                 <a href="#"><i class="fas fa-user-times"></i></a>
 
@@ -306,7 +339,7 @@
         <div class="row">
 
           <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
-              <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+              <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center  fotoInv  card-img img-fluid max-width:100% height:auto">
           </div>
 
           <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
@@ -323,7 +356,7 @@
 
     </div>   <!-- aca termina una invitacion-->
 
-        </div>
+
 
     </div><!-- cierra columna de invitaciones-->
 
@@ -331,12 +364,12 @@
 
   </div> <!-- cierra columnaTodo-->
 </div>   <!-- cierra filaTodo-->
-
+</div> <!-- cierra container-->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>

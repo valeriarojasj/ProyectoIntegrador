@@ -106,3 +106,13 @@ div#navbarSupportedContent ul{
   display: flex;
   justify-content: flex-end;
 }
+
+.textoIcono{
+  font-family: helvetica;
+  font-size: 10px;
+  text-align: center;
+}
+
+.icono{
+  text-align: center;
+}

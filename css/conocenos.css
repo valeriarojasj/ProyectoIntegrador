@@ -6,19 +6,83 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgb
 main div.row div.conocenos{
   background-color: #E2DEDE;
   width: 100%;
-  padding: 3%;
+  padding: 2%;
   margin-top: 2%;
   border-radius: 10px;
+  margin-bottom: 2%;
   text-align: center;
 }
 
-nav a img{width: 50px;}
+
 
 .marca{
   font-size: 16px;
   font-family: 'Chilanka', cursive;
   color:green;
 }
-div.row{
+div.columnas{
   width: 100%;
+
+
+}
+
+
+.fotoActividades{
+
+}
+
+.areaCaption{
+background-color: rgba(255,255,255,0.3);
+
+}
+
+h4{
+
+  color: white;
+}
+
+.carousel-inner{
+
+
+  }
+
+  div.dropdown-menu{
+    padding: 10px;
+  }
+  nav.navbar a.navbar-brand img{
+    width: 58px;
+  }
+  div.navbar-collapse{
+
+  }
+  div.navbar-collapse ul.navbar-nav{
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+
+  }
+  div.navbar-collapse ul.navbar-nav li{
+
+  }
+
+  nav a img{width: 50px;}
+
+  .tituloConocenos{
+    color:black;
+  }
+
+
+
+  }
+.textConocenos{
+  color:black;
+}
+.imagenConocenos{
+  width:100%;
+}
+
+.imageParent{
+  text-align: center;
+  margin:0 auto;
+
 }
