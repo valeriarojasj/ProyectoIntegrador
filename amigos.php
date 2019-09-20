@@ -16,7 +16,7 @@
 <header>
   <div class="navegacion">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
+      <a class="navbar-brand" href="home.php"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,13 +29,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-              <a class="nav-link" href="pagina-principal.html"><i class="fas fa-home icono"><span class=textoIcono><br>Principal</span></i></a>
+              <a class="nav-link" href="pagina-principal.php"><i class="fas fa-home icono"><span class=textoIcono><br>Principal</span></i></a>
           </li>
 
           <li class="nav-item dropdown nav-item active">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="amigos.html" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends icono"><span class=textoIcono><br>Mis amigos</span></i></a>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="amigos.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends icono"><span class=textoIcono><br>Mis amigos</span></i></a>
               <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
-                <a class="dropdown-item" href="amigos.html">Ver Mis amigos</a>
+                <a class="dropdown-item" href="amigos.php">Ver Mis amigos</a>
                 <a class="dropdown-item" href="#">Buscar Contactos</a>
               </div>
 
@@ -44,8 +44,8 @@
           <li class="nav-item dropdown nav-item">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-hand-holding-heart icono"><span class=textoIcono><br>Quiero ayudar</span></i></a>
               <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
-                <a class="dropdown-item" href="donaciones.html">Dona</a>
-                <a class="dropdown-item" href="voluntariado.html">Participa</a>
+                <a class="dropdown-item" href="donaciones.php">Dona</a>
+                <a class="dropdown-item" href="voluntariado.php">Participa</a>
               </div>
 
           </li>
@@ -54,9 +54,9 @@
 
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
       <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
-        <a class="dropdown-item" href="perfil.html">Mi Perfil</a>
+        <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
         <a class="dropdown-item" href="#">Otra Acción</a>
-        <a class="dropdown-item" href="home.html">Cerrar Sesión</a>
+        <a class="dropdown-item" href="home.php">Cerrar Sesión</a>
       </div>
     </li>
 

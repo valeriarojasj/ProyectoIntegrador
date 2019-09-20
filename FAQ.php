@@ -15,7 +15,7 @@
 <header>
 
           <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-          <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
+          <a class="navbar-brand" href="home.php"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -24,22 +24,22 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="conocenos.html">Conócenos<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="conocenos.php">Conócenos<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="FAQ.html">Preguntas Frecuentes</a>
+                <a class="nav-link" href="FAQ.php">Preguntas Frecuentes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contactanos.html">Contáctanos</a>
+                <a class="nav-link" href="contactanos.php">Contáctanos</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link " href="registro.html">Regístrate</a>
+                <a class="nav-link " href="registro.php">Regístrate</a>
               </li>
 
               <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
           <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right Login">
-            <form action="pagina-principal.html" method="post">
+            <form action="pagina-principal.php" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Email/Usuario</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -75,13 +75,13 @@
       <p>Somos el espacio donde todas las actividades sociales convergen. Si te gustaria participar de algun voluntariado, si sos el titular de alguna organización o empresa social, este lugar te ayudará a potenciar tu trabajo!</p>
       <h3>¿Cómo puedo contactarlos?</h3>
       <p>Podes contactarnos a través del
-        <a href="contactanos.html">Formulario de contacto</a> o enviando tu inquietudes a sharityx@gmail.com</p>
+        <a href="contactanos.php">Formulario de contacto</a> o enviando tu inquietudes a sharityx@gmail.com</p>
       <h3>¿Cómo puedo participar?</h3>
       <p>Para poder participar debes estar registrado, ya seas una persona o una organización.</p>
       <h3>¿Tiene algún costo?</h3>
       <p>No! Desde Sharityx deseamos que seamos muchos buscando transformar la realidad, es por ellos que este espacio será siempre gratuito.</p>
       <h3>¿Cómo cambio la info de mi perfil?</h3>
-      <p>Podes cambiar la información de tu perfil a través de la pestaña "Editar" en la solapa <a href="perfil.html">Perfil</a> </p>
+      <p>Podes cambiar la información de tu perfil a través de la pestaña "Editar" en la solapa <a href="perfil.php">Perfil</a> </p>
 
       <h3>¿Cómo cambio mi contraseña?</h3>
       <p>Podes cambiar tu contraseña a través de la pestaña "Cambiar contraseña" en la solapa "Seguridad" </p>
