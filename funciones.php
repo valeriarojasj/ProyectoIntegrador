@@ -10,6 +10,10 @@ $usuario=[];
 $ext='';
 $jsonUsuarios=NULL;
 $nombreArchivo="";
+$nombre="";
+$apellido="";
+$email="";
+
   function jsonToArray($unArchivoJson){
 
     $archivo=file_get_contents($unArchivoJson);
@@ -28,6 +32,7 @@ if($_POST){
   if(strlen($nombre)==0){
     $errorNombre="Ingrese su nombre";
     echo "paso por if nombre";
+
   }
   if(strlen($apellido)==0){
     $errorNombre="Ingrese su apellido";
@@ -36,9 +41,11 @@ if($_POST){
   if(strlen($email)==0){
     $errorEmail="Ingrese su email";
       echo "paso por if email vacio";
+
   }else if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)==false){
     $errorEmail="Ingrese un email valido";
     echo "paso por if email invalido";
+    $email="";
   }
   if(strlen($password)<8){
     $errorPassword="La contraseña debe tener por lo menos 8 caracteres";
@@ -56,10 +63,12 @@ if($_POST){
     echo "todas las validaciones fueron ok";
       if($_FILES){
         if($_FILES['avatar']['error']==0){
+
           $ext=pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
           if($ext!='jpg'&&$ext!='jpeg'&&$ext!='png'){
             $errorArchivo="Formato invalido.Solo se permiten archivos jpg, jpeg o png";
           }else{
+
             $nombreArchivo=$email . ".".$ext;
             move_uploaded_file($_FILES['avatar']['tmp_name'],'img/'.$nombreArchivo);
             $usuario["avatar"]='img/'.$nombreArchivo;

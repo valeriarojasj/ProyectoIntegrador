@@ -15,7 +15,7 @@
     $usuarios=jsonToArray("usuarios.json");
 
     foreach ($usuarios as $usuarioGuardado) {
-      
+
       if($usuarioGuardado["email"]==$email){
         $usuarioActual=$usuarioGuardado;
 
@@ -114,7 +114,7 @@
 
       <div class="perfil">
         <div class="row">
-            <div class="col-md-2 col-sm-12 col-lg-2 col-xl-2 col-12">
+            <div class="avatar">
               <img src=<?=$avatar?> alt="">
             </div>
             <div class="col-md-4 col-sm-12 col-lg-4 col-xl-4 col-4">

@@ -85,18 +85,18 @@ require_once('funciones.php');
 
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input name="name" type="text" class="form-control" id="inputName"  placeholder="Tu nombre" required>
+          <input name="name" type="text" class="form-control" id="inputName"  placeholder="Tu nombre" value="<?=$nombre?>" required>
           <small id="nombreHelp" class="form-text text-muted"><?=$errorNombre  ?></small>
   </div>
   <div class="form-group">
     <label for="lastName">Apellido</label>
-    <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" required>
+    <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" value="<?=$apellido?>" required>
     <small id="apellidoHelp" class="form-text text-muted"><?=$errorApellido  ?></small>
   </div>
   <!-- &#xf0e0 es el codigo de fontawesome para envelope icon-->
       <div class="form-group">
         <label for="email">Email</label>
-        <input name="email" type="email" class="form-control" id="inputEmail1"  placeholder="&#xf0e0; user@example.com" required>
+        <input name="email" type="email" class="form-control" id="inputEmail1"  placeholder="&#xf0e0; user@example.com" value="<?=$email?>"required>
         <small id="emaildHelp" class="form-text text-muted"><?=$errorEmail  ?></small>
       </div>
       <div class="form-group">

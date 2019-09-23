@@ -3,9 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
 
-}
 header div.navegacion{
   width: 100%;
 }
@@ -13,7 +11,6 @@ header div.navegacion form.buscador{
   float: left;
 }
 main.principal{
-  background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
 main.principal div.row div.miPerfil{
@@ -32,9 +29,7 @@ div.miPerfil img{
   border-radius: 50%;
   align-items: center;
 }
-main.principal div.row div.miPerfil h3{
 
-}
 main.principal div.row div.miPerfil h5{
 text-align: left;
 }
@@ -59,7 +54,7 @@ main.principal div.row div.novedades div.novedad{
   border-color: #9FD9F7;
   padding: 10px;
   margin-bottom: 10px;
-overflow: hidden;
+  overflow: hidden;
 }
 main.principal div.row div.novedades div.novedad img.imagenAmigo{
 width: 15%;
@@ -72,13 +67,12 @@ border-width: 2px;
 main.principal div.row div.novedades div.novedad h5{
   display: block;
   float: left;
-
 }
-main.principal div.row div.novedades div.novedad img.imagenPosteo{
+main.principal div.novedades div.novedad img.imagenPosteo{
   width: 100%;
   border-radius: 5px;
 }
-main.principal div.row div.publicidad{
+main.principal div.publicidad{
   background-color: white;
   border-radius: 10px;
   display: block;
@@ -93,13 +87,14 @@ main.principal div.row div.publicidad div.avisoPublicitario{
 main.principal div.row div.publicidad img{
   width: 100%;
 }
-
 .marca{
   font-size: 16px;
   font-family: 'Chilanka', cursive;
   color:green;
 }
-nav a img{width: 50px;}
+nav a img{
+  width: 50px;
+}
 
 div#navbarSupportedContent ul{
   width: 100%;
@@ -115,4 +110,7 @@ div#navbarSupportedContent ul{
 
 .icono{
   text-align: center;
+}
+div.novedades{
+  background-color: blue;
 }

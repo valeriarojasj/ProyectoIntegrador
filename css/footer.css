@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: white;
+}
+footer{
+  background-color: black;
+  
+}
+footer ul{
+  display: inline-block;
+}
+footer ul li{
+  list-style-type: none;
+  margin-right: 10px;
+}
+footer p{
+  display: inline-block;
+}

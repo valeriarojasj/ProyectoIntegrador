@@ -7,8 +7,9 @@
       <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
       <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/pagina-principal.css">
+
     <title>Inicio</title>
+    <link rel="stylesheet" href="css/pagina-principal.css">
   </head>
   <body>
     <header>
@@ -86,6 +87,9 @@
           <h5>Residencia:</h5> <h4>Lima</h4>
         </div>
         <div class="col-lg-6 novedades">
+          <div class="posteos">
+            eefef
+          </div>
           <!--noticias-->
           <h2>Ultimas novedades</h2>
           <div class="novedad">
