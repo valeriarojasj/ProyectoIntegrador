@@ -13,7 +13,7 @@ header div.navegacion form.buscador{
 main.principal{
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
-main.principal div.row div.miPerfil{
+div.miPerfil{
   background-color: white;
   border-radius: 10px;
   display: block;
@@ -30,15 +30,15 @@ div.miPerfil img{
   align-items: center;
 }
 
-main.principal div.row div.miPerfil h5{
+.miPerfil h5{
 text-align: left;
 }
-main.principal div.row div.miPerfil h4{
+.miPerfil h4{
 text-align: left;
 font-weight: normal;
 font-size: 20px;
 }
-main.principal div.row div.novedades{
+.novedades{
   background-color: white;
   border-radius: 10px;
   display: block;
@@ -47,7 +47,7 @@ main.principal div.row div.novedades{
   margin-right: 20px;
   margin-top: 20px;
 }
-main.principal div.row div.novedades div.novedad{
+.novedad{
   background-color: #ACDDFA;
   border-width: 1px;
   border-radius: 10px;
@@ -56,7 +56,7 @@ main.principal div.row div.novedades div.novedad{
   margin-bottom: 10px;
   overflow: hidden;
 }
-main.principal div.row div.novedades div.novedad img.imagenAmigo{
+.imagenAmigo{
 width: 15%;
 border-radius: 50%;
 float: left;
@@ -64,15 +64,15 @@ margin-bottom: 10px;
 border-color: black;
 border-width: 2px;
 }
-main.principal div.row div.novedades div.novedad h5{
+h5{
   display: block;
   float: left;
 }
-main.principal div.novedades div.novedad img.imagenPosteo{
+.imagenPosteo{
   width: 100%;
   border-radius: 5px;
 }
-main.principal div.publicidad{
+.publicidad{
   background-color: white;
   border-radius: 10px;
   display: block;
@@ -81,10 +81,10 @@ main.principal div.publicidad{
   margin-right: 20px;
   margin-top: 20px;
 }
-main.principal div.row div.publicidad div.avisoPublicitario{
+.avisoPublicitario{
   margin-bottom: 10px;
 }
-main.principal div.row div.publicidad img{
+.publicidad img{
   width: 100%;
 }
 .marca{
@@ -112,5 +112,17 @@ div#navbarSupportedContent ul{
   text-align: center;
 }
 div.novedades{
-  background-color: blue;
+  background-color: red;
+}
+
+.fotoUpload input{
+  display:none;
+}
+
+.videoUpload input{
+  display:none;
+}
+
+.docUpload input{
+  display:none;
 }
