@@ -5,7 +5,12 @@
   $nombre="";
   $apellido="";
   $avatar="";
-
+  $errorFoto="";
+  $errorVideo="";
+  $errorDoc="";
+  $imagen="";
+  $video="";
+  $docs="";
   if($_GET){
 
     $email=$_GET["email"];
@@ -28,12 +33,7 @@
   }
 
 
-$errorFoto="";
-$errorVideo="";
-$errorDoc="";
-$imagen="";
-$video="";
-$docs="";
+
 
 
 

@@ -13,7 +13,8 @@ $nombreArchivo="";
 $nombre="";
 $apellido="";
 $email="";
-
+$id=0;
+$errorLogIn="";
 
   function jsonToArray($unArchivoJson){
 
@@ -22,6 +23,7 @@ $email="";
     return $array;
 
   }
+var_dump($_POST);
 if($_POST){
 
   $nombre=$_POST["name"];
@@ -60,24 +62,25 @@ if($_POST){
     $errorConfirm="Las contraseñas no coinciden";
 
   }
-  else{
-    
-      if($_FILES){
-        if($_FILES['avatar']['error']==0){
+  if($errorNombre=="" && $errorApellido==""&&$errorPassword==""&&$errorConfirm==""&&$errorEmail==""&&$errorArchivo==""){
 
-          $ext=pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
-          if($ext!='jpg'&&$ext!='jpeg'&&$ext!='png'){
-            $errorArchivo="Formato invalido.Solo se permiten archivos jpg, jpeg o png";
-          }else{
+    if($_FILES){
+      if($_FILES['avatar']['error']==0){
 
-            $nombreArchivo=$email . ".".$ext;
-            move_uploaded_file($_FILES['avatar']['tmp_name'],'img/'.$nombreArchivo);
-            $usuario["avatar"]='img/'.$nombreArchivo;
-          }
+        $ext=pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
+        if($ext!='jpg'&&$ext!='jpeg'&&$ext!='png'){
+          $errorArchivo="Formato invalido.Solo se permiten archivos jpg, jpeg o png";
+        }else{
+
+          $nombreArchivo=$email . ".".$ext;
+          move_uploaded_file($_FILES['avatar']['tmp_name'],'img/'.$nombreArchivo);
+          $usuario["avatar"]='img/'.$nombreArchivo;
+        }
 
       }else{
-    $errorArchivo="Error al cargar el archivo";
-  }}
+        $errorArchivo="Error al cargar el archivo";
+      }
+    }
 
 
     $usuario["nombre"]=$nombre;
@@ -101,24 +104,33 @@ if($_POST){
 
       foreach($usuarios as $usuarioGuardado){
         if($usuarioGuardado["email"]==$usuario["email"]){
-        $errorEmail="El email ya existe";
+          $errorEmail="El email ya existe";
+        }
+        if($usuarioGuardado["id"]>$id) {
+          $id = $usuarioGuardado["id"];
         }
       }
+    }
+
 
       if(empty($errorEmail)){
-      $usuarios[]=$usuario;
-      $jsonUsuarios=json_encode($usuarios);
-      file_put_contents("usuarios.json",$jsonUsuarios);
-      }else{
-      $usuarios[]=$usuario;
-      $jsonUsuarios=json_encode($usuarios);
+        $id++;
+        $usuario['id']=$id;
+        $usuarios[]=$usuario;
+        $jsonUsuarios=json_encode($usuarios);
         file_put_contents("usuarios.json",$jsonUsuarios);
+        //$archivo=file_get_contents('usuarios.json');
+        header('location:home.php');
       }
 
-      //$archivo=file_get_contents('usuarios.json');
-    }
+
+
   }
 }
 //aca termina if POST
+
+
+
+
 
  ?>

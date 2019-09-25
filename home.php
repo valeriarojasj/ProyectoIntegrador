@@ -1,3 +1,10 @@
+<?php
+require_once('funcionHome.php');
+if($_POST){
+echo LogIn($_POST['email'],$_POST['password']);}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -42,13 +49,13 @@
     <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right Login">
       <form action="pagina-principal.php" method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">Email/Usuario</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <label for="email">Email/Usuario</label>
+    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
 
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="password">Contraseña</label>
+    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
   </div>
 
   <a class =colorAzul href="#">¿Olvidó su contraseña?</a>
