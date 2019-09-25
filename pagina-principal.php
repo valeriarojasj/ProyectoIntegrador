@@ -1,20 +1,94 @@
-<!DOCTYPE html>
+
 <?php
-var_dump($_POST);
+  require_once('funciones.php');
+  $email="";
+  $nombre="";
+  $apellido="";
+  $avatar="";
+
+  if($_GET){
+
+    $email=$_GET["email"];
+
+
+    $usuarios=jsonToArray("usuarios.json");
+
+    foreach ($usuarios as $usuarioGuardado) {
+
+      if($usuarioGuardado["email"]==$email){
+        $usuarioActual=$usuarioGuardado;
+
+
+      }
+
+    }
+    $nombre=$usuarioActual["nombre"];
+    $apellido=$usuarioActual["apellido"];
+    $avatar=$usuarioActual["avatar"];
+  }
+
+
+$errorFoto="";
+$errorVideo="";
+$errorDoc="";
+$imagen="";
+$video="";
+$docs="";
+
+
+
+
+if($_FILES){
+    if($_FILES["inputImagen"]["error"] != 0){
+      "Error al cargar la imagen";
+    }else{
+      $ext=pathinfo($_FILES["inputImagen"]["name"],PATHINFO_EXTENSION);
+      if($ext!="jpg" && $ext!="jpeg" && $ext!="png"){
+      $errorFoto="Solo se permiten fotos en formato jpg, jpeg o png.<br>";
+    }else{$imagen="uploads/imagen.$ext";
+      move_uploaded_file($_FILES["inputImagen"]["tmp_name"],$imagen);}
+    }
+  if($_FILES["inputVideo"]["error"] != 0){
+    "Error al cargar el Video";
+    }else{
+      $ext=pathinfo($_FILES["inputVideo"]["name"],PATHINFO_EXTENSION);
+      if($ext!="mpg" && $ext!="mov" && $ext!="mpeg" && $ext!="mp4" && $ext!="avi" && $ext!="mpeg-4"){
+      $errorVideo="Solo se permiten videos en formato mpg, mov, mpeg, mp4, avi y mpeg-4.<br>";
+  }else{$video="uploads/video.$ext";
+    move_uploaded_file($_FILES["inputVideo"]["tmp_name"], $video);}
+
+}
+  if($_FILES["inputDoc"]["error"] != 0){
+    "Error al cargar el documento";
+  }else{
+    $ext=pathinfo($_FILES["inputDoc"]["name"],PATHINFO_EXTENSION);
+    if($ext!="doc" && $ext!="docx" && $ext!="pdf"){
+      $errorDoc="Solo se permiten documentos en formato doc, docx y pdf.<br>";
+  }else{
+    $docs="uploads/docs.$ext";
+    move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
+  }
+}
+
+
+}
 ?>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <title>Pagina Principal</title>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
       <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
       <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Inicio</title>
     <link rel="stylesheet" href="css/pagina-principal.css">
   </head>
   <body>
+
     <header>
       <div class="navegacion">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,8 +130,8 @@ var_dump($_POST);
 
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
           <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right ">
-            <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
-            <a class="dropdown-item" href="#">Otra Acción</a>
+            <a class="dropdown-item" href="perfil.php">Ver Mi perfil</a>
+            <a class="dropdown-item" href="#">Editar Mi Perfil</a>
             <a class="dropdown-item" href="home.php">Cerrar Sesión</a>
           </div>
         </li>
@@ -79,17 +153,50 @@ var_dump($_POST);
       </div>
 
     </header>
-    <main class="principal container-fluid">
-      <div class="row">
-        <div class="col-lg-3 miPerfil">
+
+<div class="container-fluid">
+
+
+<div class="row">
+        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionIzquierda">
           <!--mi perfil-->
-          <img src="img/voluntaria.jpg"  alt="">
-          <h3>Mariana Diaz</h3>
-          <h5>Experiencias:</h5> <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
-          <h5>Ocupación:</h5> <h4>Estudiante</h4>
-          <h5>Residencia:</h5> <h4>Lima</h4>
-        </div> <!--cierra el div de mi perfil-->
-        <div class="col-lg-6 novedades">
+
+          <div class="miPerfil">
+
+
+          <img value="<?=$avatar?>" src=<?=$avatar?>  alt="">
+          <h1><?=$nombre . " " .$apellido ?></h1>
+          <div class="caja perfilPrincipal pt-3">
+            <h4 class="text-primary"><b>Experiencia: </b></h4>
+            <ul class="perfilContenido" type="none">
+              <li class="text-left"><b>Directora</b></li>
+              <li class="text-left">Fundacion para la niñez ABGS</li>
+              <li class="text-left">Lima, Peru</li>
+              <li class="text-left">Jun 2018-Abr 2019</li>
+            </ul>
+
+            <ul class="perfilContenido" type="none">
+              <li class="text-left"><b>Coordinadora de Area de Voluntariado</b></li>
+              <li class="text-left">Fundacion de niños GXTZ</li>
+              <li class="text-left">Buenos Aires, Argentina</li>
+              <li class="text-left">Feb 2011 - May 2018</li>
+            </ul>
+
+
+        </div>
+          <h4 class="text-primary"><b>Ocupación Actual:</b></h4>
+          <ul class="perfilContenido" type="none">
+            <li class="text-left">Estudiante</li>
+          </ul>
+
+          <h4 class="text-primary"><b>Residencia Actual:</b></h4>
+          <ul class="perfilContenido" type="none">
+            <li class="text-left">Lima, Peru</li>
+          </ul>
+        </div><!--cierra el div de mi perfil-->
+      </div> <!--cierra el div de la columna-->
+        <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6  seccionCentral">
+          <div class="novedades">
           <div class="posteos">
 
             <!-- Button trigger modal -->
@@ -108,13 +215,10 @@ var_dump($_POST);
                   </button>
                 </div>
                   <div class="modal-body">
-                    <form method='post' action='registro.php' enctype="multipart/form-data">
-                      <div class="mb-3">
-                        <textarea name="textoPosteo" class="form-control" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
-                        <div class="invalid-feedback">
-                          <!--Aca puede ir el mensaje de error si esta vacio-->
-                        </div>     <!--cierra el div del  mensaje de error del text area-->
-                      </div>     <!--cierra el div del textArea-->
+
+
+                    <form method='post' action="" enctype="multipart/form-data">
+
 
                       <div class="form-group">
                         <select class="custom-select" >
@@ -138,45 +242,78 @@ var_dump($_POST);
   <div class="listaBotones">
 
 
-    <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">
+    <ul class="list-group list-group-horizontal" type="none">
 
-            <div class="form-group fotoUpload">
-              <label for="inputImagen"><i class="fas fa-camera"></i></label>
-              <input name="imagen" type="file" id="inputImagen" >
+
+            <div class="form-group fotoUpload mr-3">
+              <li>
+              <label for="inputImagen"><i class="fas fa-camera align-middle"></i></label>
+              <input name="inputImagen" type="file" id="inputImagen" ></li>
+
+
             </div> <!--cierra el div de subir foto-->
 
 
 
-        </li>
-        <li class="list-group-item">
-        <div class="form-group videoUpload">
-              <label for="inputVideo"><i class="fas fa-video"></i></label>
-              <input name="video" type="file" id="inputVideo">
+
+
+        <div class="form-group videoUpload mr-3">
+<li>
+              <label for="inputVideo"><i class="fas fa-video align-middle"></i></label>
+              <input name="inputVideo" type="file" id="inputVideo"></li>
+
             </div><!--cierra el div de subir video-->
-        </li>
-        <li class="list-group-item">
-        <div class="form-group docUpload">
-              <label for="inputDoc"><i class="fas fa-paperclip"></i></label>
-              <input name="doc" type="file" id="inputDoc">
+
+
+        <div class="form-group docUpload mr-3">
+          <li>
+              <label for="inputDoc"><i class="fas fa-paperclip align-middle"></i></label>
+              <input name="inputDoc" type="file" id="inputDoc"></li>
             </div> <!--cierra el div de subir documento-->
-        </li>
+
     </ul>
   </div> <!--cierra el div de la lista de botones-->
+  <span><?=$errorFoto ." "?> </span>
+  <span><?=$errorVideo." "?></span>
+  <span><?=$errorDoc . " "?></span>
 </div> <!--cierra el div del body del modal-->
 
 
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary" value="Enviar">Guardar Cambios</button>
       </div> <!--cierra el footer del modal-->
         </form><!--cierra el form de agregar posteo-->
-    
+
     </div><!--cierra el contenido del modal-->
   </div> <!--cierra el dialogo del modal-->
 </div><!--cierra el modal-->
+<div class="novedad"><!--comienza un posteo-->
+  <div class=" perfilPost media">
+  <img class="avatarPosteo" src="<?=$avatar?>" alt="">
+  <div class="media-body nombrePosteo">
+    <h5 ><?=$nombre . " " .$apellido ?></h5>
+    </div>
+  </div>
 
+
+<div class="imgOvideo">
+ <img src="<?=$imagen?>" class="imagenPosteo" alt="">
+ <media src="<?=$video?>" class="videoPosteo" alt="">
+   </div>
+   <div class="mb-3 divPosteo">
+     <textarea name="textoPosteo" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
+     <div class="invalid-feedback">
+       <!--Aca puede ir el mensaje de error si esta vacio-->
+     </div>     <!--cierra el div del  mensaje de error del text area-->
+   </div>     <!--cierra el div del textArea-->
+<ul type="none" class="list-group list-group-horizontal acciones">
+<li class="mr-3"><a class="textoAcciones" t href="#"><i class=" iconosAcciones fas fa-thumbs-up">      </i> Me gusta </a></li>
+  <li class= "mr-3">  <a class="textoAcciones text-primary" href="#"><i class=" text-primary iconosAcciones fas fa-comment-alt">     </i> Comentar  </a></li>
+  <li class ="mr-3">  <a class="textoAcciones"href="#"><i class=" iconosAcciones fas fa-share"> </i> Compartir   </a></li>
+   </ul>
+</div><!--cierra un posteo-->
 
 
 
@@ -186,9 +323,16 @@ var_dump($_POST);
           <!--noticias-->
           <h2>Ultimas novedades</h2>
           <div class="novedad"><!--comienza un posteo-->
-           <img src="img/voluntaria.jpg" class="imagenAmigo"alt="">
-           <h5>Mariana Diaz</h5>
-           <img src="img/posteo.jpg" class="imagenPosteo" alt="">
+            <div class="perfilPost media">
+           <img src="img/woman-1-500px.jpg" class="avatarPosteo"alt="">
+
+          <div class="media-body nombrePosteo">
+           <h5>María García</h5>
+           </div>
+           </div>
+           <div class="imgOvideo">
+           <img src="img/actividadesVoluntarios1_1250x760.jpg" class="imagenPosteo" alt="">
+           </div>
            <p>Explicación del proyecto</p>
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
@@ -196,9 +340,15 @@ var_dump($_POST);
            <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
           </div><!--cierra un posteo-->
           <div class="novedad"><!--comienza un posteo-->
-           <img src="img/voluntaria.jpg" class="imagenAmigo" alt="">
-           <h5>Mariana Diaz</h5>
-           <img src="img/posteo.jpg" class="imagenPosteo" alt="">
+            <div class="perfilPost media">
+           <img src="img/woman-2-500px.jpg" class="avatarPosteo" alt="">
+           <div class="media-body nombrePosteo">
+           <h5>Isabel Gómez</h5>
+           </div>
+             </div>
+           <div class="imgOvideo">
+           <img src="img/actividadesVoluntarios2_1250x760.jpg" class="imagenPosteo" alt="">
+           </div>
            <p>Explicación del proyecto</p>
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
@@ -206,9 +356,15 @@ var_dump($_POST);
            <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
           </div><!--cierra un posteo-->
           <div class="novedad"> <!--comienza un posteo-->
-           <img src="img/voluntaria.jpg" class="imagenAmigo" alt="">
-           <h5>Mariana Diaz</h5>
-           <img src="img/posteo.jpg" class="imagenPosteo" alt="">
+            <div class="perfilPost media">
+           <img src="img/man-1-500px.jpg" class="avatarPosteo" alt="">
+           <div class="media-body nombrePosteo">
+           <h5>Pedro Pérez</h5>
+           </div>
+           </div>
+           <div class="imgOvideo">
+           <img src="img/actividadesVoluntarios3_1250x760.jpg" class="imagenPosteo" alt="">
+           </div>
            <p>Explicación del proyecto</p>
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
@@ -216,9 +372,15 @@ var_dump($_POST);
            <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
           </div> <!--cierra un posteo-->
           <div class="novedad"> <!--comienza un posteo-->
-           <img src="img/voluntaria.jpg" class="imagenAmigo" alt="">
-           <h5>Mariana Diaz</h5>
-           <img src="img/posteo.jpg" class="imagenPosteo" alt="">
+            <div class="perfilPost media">
+           <img src="img/man-2-500px.jpg" class="avatarPosteo" alt="">
+          <div class="media-body nombrePosteo">
+           <h5>Felipe Álvarez</h5>
+           </div>
+           </div>
+           <div class="imgOvideo">
+           <img src="img/actividadesVoluntarios2_1250x760.jpg" class="imagenPosteo" alt="">
+          </div>
            <p>Explicación del proyecto</p>
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
@@ -226,9 +388,15 @@ var_dump($_POST);
            <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
           </div><!--cierra un posteo-->
           <div class="novedad"><!--comienza un posteo-->
-           <img src="img/voluntaria.jpg" class="imagenAmigo" alt="">
+          <div class="perfilPost media">
+         <img src="img/voluntaria.jpg" class="avatarPosteo" alt="">
+           <div class="media-body nombrePosteo">
            <h5>Mariana Diaz</h5>
+           </div>
+           </div>
+           <div class="imgOvideo">
            <img src="img/posteo.jpg" class="imagenPosteo" alt="">
+          </div>
            <p>Explicación del proyecto</p>
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
@@ -236,38 +404,55 @@ var_dump($_POST);
            <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
           </div><!--cierra un posteo-->
           <div class="novedad"><!--comienza un posteo-->
-           <img src="img/voluntaria.jpg" class="imagenAmigo" alt="">
-           <h5>Mariana Diaz</h5>
-           <img src="img/posteo.jpg" class="imagenPosteo" alt="">
+          <div class="perfilPost media">
+           <img src="img/woman-4-500px.jpg" class="avatarPosteo" alt="">
+           <div class="media-body nombrePosteo">
+           <h5>Silvia Smith</h5>
+           </div>
+           </div>
+           <div class="imgOvideo">
+           <img src="img/actividadesVoluntarios3_1250x760.jpg" class="imagenPosteo" alt="">
+           </div>
            <p>Explicación del proyecto</p>
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
            <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
          </div><!--cierra un posteo-->
+
+
+         </div>
         </div> <!--cierra el div de la columna central-->
-        <div class="col-lg-2 publicidad">
+        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionDerecha">
+          <div class="publicidad">
+
+
           <!--publicidad-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/publicidad.png" alt=""></a>
+            <h4 class="text-primary"><b>Publicidad</b></h4>
+            <a href="#"><img src="img/ad-1.jpg" class="img-fluid" alt=""></a>
           </div><!--cierra el div de aviso publicitario-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/publicidad.png" alt=""></a>
+            <a href="#"><img src="img/ad-2.jpg" class="img-fluid" alt=""></a>
           </div><!--cierra el div de aviso publicitario-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/publicidad.png" alt=""></a>
+            <a href="#"><img src="img/ad-3.jpg" class="img-fluid" alt=""></a>
           </div> <!--cierra el div de aviso publicitario-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/publicidad.png" alt=""></a>
+            <a href="#"><img src="img/ad-4.jpg" class="img-fluid" alt=""></a>
           </div> <!--cierra el div de aviso publicitario-->
-        </div> <!--cierra el div de la columna derecha-->
+
+        </div> <!--cierra el div de publicidad-->
+        </div><!--cierra el div de la columna derecha-->
       </div> <!--cierra el div de row-->
-    </main>
+
+
 <footer>
 
 
 
 </footer>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

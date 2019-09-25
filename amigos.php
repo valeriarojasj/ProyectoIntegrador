@@ -9,9 +9,9 @@
       <!-- script para fontawesome version 5 usando kit con codigo personal para mantener la ultima actualizacion-->
 <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
 <!-- link a mi css-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/amigosStyle.css">
   </head>
 <header>
   <div class="navegacion">
@@ -54,8 +54,8 @@
 
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
       <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
-        <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
-        <a class="dropdown-item" href="#">Otra Acción</a>
+        <a class="dropdown-item" href="perfil.php">Ver Mi perfil</a>
+        <a class="dropdown-item" href="#">Editar Mi Perfil</a>
         <a class="dropdown-item" href="home.php">Cerrar Sesión</a>
       </div>
     </li>
@@ -81,6 +81,10 @@
 
     <div class="container-fluid">
 
+      <div class="row">
+
+
+
 
 
 
@@ -88,28 +92,33 @@
 
         <!-- aca comienza la pagina-->
 
-<div class="row filaTodo">
 
 
-  <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 columnaTodo">
+
       <!-- Seccion de Saludo-->
-        <div class="row filaSaludo ">
 
-        </div>
 
       <!-- Seccion de Total contactos-->
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 seccionSaludo d-flex media ">
-            <img class="fotoPerfil img-fluid self-align-center" src="img/voluntaria.jpg" alt="">
-            <div class="media-body">
-              <h2 class="saludo d-flex text-wrap">Hola Mariana!</h2>
+
+<div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12 mt-3 TusContactos">
+
+
+            <div class="seccionSaludo media text-left">
+              <div class="divAvatar">
+            <img class="fotoPerfil self-align-center" src="img/voluntaria.jpg" alt="">
+            </div>
+            <div class="media-body areaTitulo ">
+              <h1 class="saludo text-wrap text-primary text-left">Contactos e Invitaciones</h1>
+              </div>
             </div>
 
-          </div>
-          <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 mb-3 TusContactos">
+</div>
+</div>
+<div class="row">
+          <div class="col-md-9 col-sm-9 col-lg-9 col-12 col-xl-9 mb-3 TusContactos">
 
           </div>
-          <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 mb-3 TusInvitaciones">
+          <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 mb-3 col-12 TusInvitaciones">
 
         </div>
   </div>
@@ -119,7 +128,7 @@
           <div class="row">
             <!-- aca comienza la seccion de contactos-->
 
-          <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 fondoRojo">
+          <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 col-12 fondoRojo">
             <div class="contactosTitulo">
               <h6 class="tituloSeccion">Mis Amigos (8)</h6>
             </div>
@@ -128,15 +137,15 @@
             <!-- aca empieza un par de contactos-->
               <div class="row ">
 
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 fondoAmarillo  hombre">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 col-12 fondoAmarillo  hombre">
 
                   <div class="row">
 
-                    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 col-12 fondoGris   media">
                         <img src="img/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
 
-                    <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light    media-body">
+                    <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 fondoBlanco border border-light    media-body">
                         <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                         <h4>Pedro Pérez</h4>
                         <p>Aca va el texto del contacto izq</p>
@@ -371,9 +380,9 @@
 
   </div> <!-- cierra fila de contactos e invitaciones-->
 
-  </div> <!-- cierra columnaTodo-->
-</div>   <!-- cierra filaTodo-->
-</div> <!-- cierra container-->
+  </div>
+   <!-- cierra filaTodo-->
+<!-- cierra container-->
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

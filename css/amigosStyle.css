@@ -17,13 +17,6 @@ input{
   font-weight: 900;
 }
 
-.fondoFormulario{
-  background-color: #E2DEDE;
-  width: 100%;
-  padding: 3%;
-  margin-top: 2%;
-  border-radius: 10px;
-  }
 
 
 
@@ -33,12 +26,7 @@ color: white;
 margin-top: 1%;
 }
 
-.media{
-  background-color: white;
-  color:black;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
+
 
 h5{
   color: rgba(2,0,36,1);
@@ -48,19 +36,24 @@ h5{
 .fondoVerde{
 margin:0;
 padding-left: 2%;
+padding-right: 2%;
+}
+.fondoRojo{
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .fondoAmarillo{
   border: gray solid 1px;
   background-color: white;
+
 }
 
 .fondoGris{
-  background-color: white;
 }
 
 .fondoBlanco{
-  background-color: white;
+
   color: black;
   }
 
@@ -78,9 +71,7 @@ img{
 
 .tituloSeccion{
   color:white;
-}
 
-.hombre{
 }
 
 nav a img{
@@ -169,52 +160,35 @@ ul.navbar-nav{
   text-align: center;
 }
 
-.columnaTodo{
-padding-right:3%;
-padding-left: 3%;
-}
+
 
 .fotoPerfil{
   border-radius: 150px;
-  width: 10%;
+  width: 40%;
   border-color: rgba(0,0,0,0.7)
   border-width: medium;
   border-style: solid;
 }
 
 .seccionSaludo{
-  text-align: center;
+  text-align: left;
   margin-top: 2%;
   margin-left: 0;
   margin-right: 0;
-  background-color: rgba(255,255,255,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-left: 3%;
-  padding-right:3%;
   padding-top:1%;
   padding-bottom:1%;
   color: black;
 }
 
-.filaSaludo{
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
+.areaTitulo{
+  text-align: left;
 }
 
 .fotoInv{
-  padding:3%;
   align-self:center;
 
 }
 
-.areaTitulo{
-  align-self: center;
-
-}
 
 /*@media only screen and (max-width: 600px) {
   .invitacionesTitulo{

@@ -12,7 +12,7 @@ require_once('funciones.php');
         <!-- script para fontawesome version 5 usando kit con codigo personal para mantener la ultima actualizacion-->
 <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
 <!-- link a mi css-->
     <link rel="stylesheet" href="css/style.css">
 

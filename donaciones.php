@@ -9,7 +9,7 @@
       <!-- script para fontawesome version 5 usando kit con codigo personal para mantener la ultima actualizacion-->
 <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
 <!-- link a mi css-->
   <link rel="stylesheet" href="css/donaciones.css">
   </head>
@@ -54,8 +54,8 @@
 
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
       <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
-        <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
-        <a class="dropdown-item" href="#">Otra Acción</a>
+        <a class="dropdown-item" href="perfil.php">Ver Mi perfil</a>
+        <a class="dropdown-item" href="#">Editar Mi Perfil</a>
         <a class="dropdown-item" href="home.php">Cerrar Sesión</a>
       </div>
     </li>
@@ -78,33 +78,34 @@
 </header>
 <body>
 <div class="container-fluid">
+  <h1 class="text-center">Encuentra a quién puedes donar los diferentes tipos de artículos</h1>
 
 <div class="row">
 
 
   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-    <div class="list-group dropright">
-      <button type="button" class="btn btn-primary">Quiero donar:</button>
+    <div class="list-group">
+      <button type="submit" class="btn btn-primary rounded-top">Tipos de donaciones</button>
         </div>
     <div class="list-group dropright">
-      <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alimentos</button>
+      <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alimentos</button>
         <div class="dropdown-menu jovenes">
-          <p>
+          <p class="mb-0">
             <input type="checkbox" name="voluntariado" value="ALIM_LP"> Leche en polvo
             <br>
             <input type="checkbox" name="voluntariado" value="ALIM_LE"> Leche entera
             <br>
             <input type="checkbox" name="voluntariado" value="ALIM_NP"> No perecederos
             <br>
-            <input type="checkbox" name="voluntariado" value="ALIM_P"> Perecederos
+            <input  type="checkbox" name="voluntariado" value="ALIM_P"> Perecederos
           </p>
       </div>
     </div>
 
     <div class="list-group dropright">
-      <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artículos para bebés</button>
+      <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artículos para bebés</button>
         <div class="dropdown-menu mayores">
-          <p>
+        <p class="mb-0">
             <input type="checkbox" name="voluntariado" value="bebe_panal"> Pañales
             <br>
             <input type="checkbox" name="voluntariado" value="bebe_otros"> Otros (Cochecito,cuna, etc.)
@@ -114,9 +115,9 @@
   </div>
   </div>
   <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cocina</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cocina</button>
   <div class="dropdown-menu familia">
-    <p>
+    <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="Cocina_Art"> Artículos de cocina
       <br>
       <input type="checkbox" name="voluntariado" value="Cocina_Elec"> Electrodomésticos
@@ -125,9 +126,9 @@
   </div>
 </div>
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colchones y frazadas</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colchones y frazadas</button>
   <div class="dropdown-menu comedores">
-    <p>
+    <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="Colchones"> Colchones
       <br>
       <input type="checkbox" name="voluntariado" value="Frazadas"> Frazadas
@@ -138,9 +139,9 @@
   </div>
 </div>
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libros</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Libros</button>
   <div class="dropdown-menu educacion">
-    <p>
+  <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="Libros_E"> Libros Escolares
       <br>
       <input type="checkbox" name="voluntariado" value="Libros_IJ"> Infantiles/Juveniles
@@ -150,9 +151,9 @@
 </div>
   </div>
   <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Muebles</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Muebles</button>
   <div class="dropdown-menu salud">
-    <p>
+    <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="S_adicciones"> Bibliotecas y Armarios
       <br>
       <input type="checkbox" name="voluntariado" value="S_Enfermedades"> Camas
@@ -166,9 +167,9 @@
   </div>
 
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recreación</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recreación</button>
   <div class="dropdown-menu discap">
-    <p>
+  <p class="mb-0">
         <input type="checkbox" name="voluntariado" value="Rec_Dep"> Articulos deportivos
         <br>
         <input type="checkbox" name="voluntariado" value="Rec_Mus"> Instrumentos Musicales
@@ -181,9 +182,9 @@
 
   </div>
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ropa y calzado</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ropa y calzado</button>
   <div class="dropdown-menu indig">
-    <p>
+    <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="Ropa_bb"> Bebés
       <br>
       <input type="checkbox" name="voluntariado" value="Ropa_Nino"> Niños
@@ -198,9 +199,9 @@
 </div>
   </div>
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salud</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salud</button>
   <div class="dropdown-menu reinsercion">
-    <p>
+  <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="S_Med"> Medicinas
       <br>
       <input type="checkbox" name="voluntariado" value="S_PAux"> Primeros auxilios
@@ -212,9 +213,9 @@
   </div>
   </div>
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tecnología</button>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tecnología</button>
   <div class="dropdown-menu ambiente">
-    <p>
+    <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="T_Tab"> Tabletas
       <br>
       <input type="checkbox" name="voluntariado" value="T_Comp"> Computadoras
@@ -232,27 +233,27 @@
   </div>
   </div>
 <div class="list-group dropright">
-  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Útiles Escolares</button>
-  <div class="dropdown-menu animales">
-    <p>
+  <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Útiles Escolares</button>
+  <div class="dropdown-menu utiles">
+  <p class="mb-0">
       <input type="checkbox" name="voluntariado" value="UE_Utiles"> Útiles escolares
     </p>
 </div>
   </div>
 
   <div class="list-group dropright">
-    <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Higiene y limpieza</button>
-    <div class="dropdown-menu animales">
-      <p>
+    <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Higiene y limpieza</button>
+    <div class="dropdown-menu higiene">
+      <p class="mb-0">
         <input type="checkbox" name="voluntariado" value="Hig"> Higiene y limpieza
       </p>
   </div>
     </div>
 
     <div class="list-group dropright">
-      <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Construcción</button>
-      <div class="dropdown-menu animales">
-        <p>
+      <button type="button" class="list-group-item list-group-item-action btn btn-secondary dropdown-toggle rounded-b" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Construcción</button>
+      <div class="dropdown-menu construccion">
+      <p class="mb-0">
           <input type="checkbox" name="voluntariado" value="T_CamV"> Materiales de construcción
           <br>
           <input type="checkbox" name="voluntariado" value="T_TV"> Pintura

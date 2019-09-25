@@ -2,27 +2,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
-  div.navegacion nav.navbar a.navbar-brand img{
-      width: 58px;
-  }
-
-  div.perfil{
-    padding: 20px;
-  }
-
-  div.perfil div.row {
-    background-color: white;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-.avatar{
-  width: 100px;
+body{
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
-.avatar img{
+
+navbar-brand img{
+width: 58px;
+}
+
+.perfil{
+  border-radius: 10px;
+  background-color: white;
+  }
+
+  .marca{
+  font-size: 20px;
+    font-family: 'Mansalva', cursive;
+    color:green;
+  }
+
+
+.divAvatar{
+  width: 15%;
+  padding: 1%;
+}
+
+.divAvatar img{
     border-radius: 50%;
     width: 100%;
     border-color: black;
@@ -30,48 +37,86 @@
     border-style: solid;
   }
 
-  div.perfil div.row h1{
-    height: 100%;
-      background-color: blue;
+  .avatarYtexto{
+    align-content: center;
+  }
+
+
+h1{
+    color: black;
+    margin-bottom: 0;
   }
   section div.Descripcion{
     background-color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
     margin-top: 10px;
   }
 
   section div.Descripcion div.caja{
     background-color: #c3c3c3;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 
-nav a img{
-  width: 50px;
-}
 
-.marca{
-  font-size: 16px;
-  font-family: 'Chilanka', cursive;
-  color:green;
-}
+  *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
 
-div#navbarSupportedContent ul{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
+  header nav a{
+    color: green;
+  }
 
-.texto{
-  padding:3%;
-}
+  input{
+    font-family: 'Helvetica', fontawesome;
+    font-weight: 900;
+  }
 
-.textoIcono{
-  font-family: helvetica;
-  font-size: 10px;
-  text-align: center;
-}
 
-.icono{
-  text-align: center;
-}
+  body{
+
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+  }
+
+  h2{
+
+  color: black;
+  }
+
+  .textoIcono{
+    font-family: helvetica;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .icono{
+    text-align: center;
+  }
+
+  div.dropdown-menu{
+    padding: 10px;
+  }
+
+  nav.navbar a.navbar-brand img{
+    width: 58px;
+  }
+
+  div.navbar-collapse{
+  }
+
+  div.navbar-collapse ul.navbar-nav{
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  div.navbar-collapse ul.navbar-nav li{
+  }
+
+  header{
+    margin-bottom: 2%;
+  }

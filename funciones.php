@@ -14,6 +14,7 @@ $nombre="";
 $apellido="";
 $email="";
 
+
   function jsonToArray($unArchivoJson){
 
     $archivo=file_get_contents($unArchivoJson);
@@ -31,36 +32,36 @@ if($_POST){
 
   if(strlen($nombre)==0){
     $errorNombre="Ingrese su nombre";
-    echo "paso por if nombre";
+
 
   }
   if(strlen($apellido)==0){
     $errorNombre="Ingrese su apellido";
-      echo "paso por if apellido";
+
   }
   if(strlen($email)==0){
     $errorEmail="Ingrese su email";
-      echo "paso por if email vacio";
+
 
   }else if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)==false){
     $errorEmail="Ingrese un email valido";
-    echo "paso por if email invalido";
+
     $email="";
   }
   if(strlen($password)<8){
     $errorPassword="La contraseña debe tener por lo menos 8 caracteres";
-    echo "paso por if password invalido";
+
   }
   if(strlen($confirm)<8){
     $errorConfirm="La contraseña debe tener por lo menos 8 caracteres";
-    echo "paso por if confirm invalido";
+
   }
   if($password!=$confirm){
     $errorConfirm="Las contraseñas no coinciden";
-    echo "paso por if confirm no coincide";
+
   }
   else{
-    echo "todas las validaciones fueron ok";
+    
       if($_FILES){
         if($_FILES['avatar']['error']==0){
 
@@ -98,7 +99,7 @@ if($_POST){
     if(file_exists("usuarios.json")){
       $usuarios=jsonToArray("usuarios.json");
 
-      foreach ($usuarios as $usuarioGuardado) {
+      foreach($usuarios as $usuarioGuardado){
         if($usuarioGuardado["email"]==$usuario["email"]){
         $errorEmail="El email ya existe";
         }

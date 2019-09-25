@@ -7,7 +7,7 @@
       <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
       <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
-      <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/conocenos.css">
 
     <title>Conocenos</title>

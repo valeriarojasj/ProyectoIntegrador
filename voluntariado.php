@@ -9,7 +9,7 @@
       <!-- script para fontawesome version 5 usando kit con codigo personal para mantener la ultima actualizacion-->
 <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
 <!-- link a mi css-->
   <link rel="stylesheet" href="css/voluntariado.css">
   </head>
@@ -54,8 +54,8 @@
 
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user icono"><span class=textoIcono><br>Mi Perfil</span></i></a>
       <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
-        <a class="dropdown-item" href="perfil.php">Mi Perfil</a>
-        <a class="dropdown-item" href="#">Otra Acción</a>
+        <a class="dropdown-item" href="perfil.php">Ver Mi perfil</a>
+        <a class="dropdown-item" href="#">Editar Mi Perfil</a>
         <a class="dropdown-item" href="home.php">Cerrar Sesión</a>
       </div>
     </li>
@@ -79,7 +79,20 @@
 <body>
 <div class="container-fluid">
 
+
 <div class="row">
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+
+<h1 class="h1" id="tituloVoluntariado">En donde puedo ayudar?</h1>
+
+
+
+</div>
+</div>
+<div class="row">
+
 
 
   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
