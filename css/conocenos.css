@@ -84,5 +84,9 @@ h4{
 .imageParent{
   text-align: center;
   margin:0 auto;
+}
 
+.Login{
+  width: 280px;
+  padding:10px;
 }

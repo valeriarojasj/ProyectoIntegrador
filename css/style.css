@@ -126,8 +126,11 @@ a{
   color:red;
 }
 
-div.dropdown-menu{
-  padding: 10px;
+
+ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 navbar-brand img{

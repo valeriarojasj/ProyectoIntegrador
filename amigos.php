@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once("funciones.php");
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

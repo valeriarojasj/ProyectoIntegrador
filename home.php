@@ -1,7 +1,7 @@
 <?php
-require_once('funcionHome.php');
+require_once('funciones.php');
 if($_POST){
-echo LogIn($_POST['email'],$_POST['password']);}
+LogIn($_POST['email'],$_POST['password']);}
 
 ?>
 

@@ -32,46 +32,6 @@
     $avatar=$usuarioActual["avatar"];
   }
 
-
-
-
-
-
-
-if($_FILES){
-    if($_FILES["inputImagen"]["error"] != 0){
-      "Error al cargar la imagen";
-    }else{
-      $ext=pathinfo($_FILES["inputImagen"]["name"],PATHINFO_EXTENSION);
-      if($ext!="jpg" && $ext!="jpeg" && $ext!="png"){
-      $errorFoto="Solo se permiten fotos en formato jpg, jpeg o png.<br>";
-    }else{$imagen="uploads/imagen.$ext";
-      move_uploaded_file($_FILES["inputImagen"]["tmp_name"],$imagen);}
-    }
-  if($_FILES["inputVideo"]["error"] != 0){
-    "Error al cargar el Video";
-    }else{
-      $ext=pathinfo($_FILES["inputVideo"]["name"],PATHINFO_EXTENSION);
-      if($ext!="mpg" && $ext!="mov" && $ext!="mpeg" && $ext!="mp4" && $ext!="avi" && $ext!="mpeg-4"){
-      $errorVideo="Solo se permiten videos en formato mpg, mov, mpeg, mp4, avi y mpeg-4.<br>";
-  }else{$video="uploads/video.$ext";
-    move_uploaded_file($_FILES["inputVideo"]["tmp_name"], $video);}
-
-}
-  if($_FILES["inputDoc"]["error"] != 0){
-    "Error al cargar el documento";
-  }else{
-    $ext=pathinfo($_FILES["inputDoc"]["name"],PATHINFO_EXTENSION);
-    if($ext!="doc" && $ext!="docx" && $ext!="pdf"){
-      $errorDoc="Solo se permiten documentos en formato doc, docx y pdf.<br>";
-  }else{
-    $docs="uploads/docs.$ext";
-    move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
-  }
-}
-
-
-}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

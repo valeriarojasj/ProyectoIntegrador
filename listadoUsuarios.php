@@ -1,6 +1,7 @@
 <?php
+session_start();
 require_once("funciones.php");
-$usuarios=jsonToArray("usuarios.json");
+$usuarios=JsonToArray("usuarios.json");
  ?>
 
 

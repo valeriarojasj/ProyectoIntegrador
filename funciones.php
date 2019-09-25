@@ -1,29 +1,38 @@
 <?php
+$nombre="";
+$apellido="";
+$email="";
+$password="";
+$confirm="";
 $errorNombre="";
 $errorApellido="";
+$errorEmail="";
 $errorPassword="";
 $errorConfirm="";
-$errorEmail="";
 $errorArchivo="";
 $usuarios=[];
 $usuario=[];
 $ext='';
 $jsonUsuarios=NULL;
 $nombreArchivo="";
-$nombre="";
-$apellido="";
-$email="";
 $id=0;
 $errorLogIn="";
+$avatar="";
+$errorFoto="";
+$errorVideo="";
+$errorDoc="";
+$imagen="";
+$video="";
+$docs="";
 
-  function jsonToArray($unArchivoJson){
+  function JsonToArray($unArchivoJson){
 
     $archivo=file_get_contents($unArchivoJson);
     $array=json_decode($archivo, true);
     return $array;
+}//aca cierra la funcion jsonToArray
 
-  }
-var_dump($_POST);
+function RegistroUsuario(){
 if($_POST){
 
   $nombre=$_POST["name"];
@@ -38,7 +47,7 @@ if($_POST){
 
   }
   if(strlen($apellido)==0){
-    $errorNombre="Ingrese su apellido";
+    $errorApellido="Ingrese su apellido";
 
   }
   if(strlen($email)==0){
@@ -81,24 +90,11 @@ if($_POST){
         $errorArchivo="Error al cargar el archivo";
       }
     }
-
-
     $usuario["nombre"]=$nombre;
     $usuario["apellido"]=$apellido;
     $usuario["email"]=$email;
     $password=password_hash($_POST["inputPassword1"],PASSWORD_DEFAULT);
     $usuario["password"]=$password;
-
-
-    /*if(isset($archivo)){
-
-    }
-
-  foreach ($usuarios as $usuario) {
-    if
-
-  }
-  */
     if(file_exists("usuarios.json")){
       $usuarios=jsonToArray("usuarios.json");
 
@@ -111,8 +107,6 @@ if($_POST){
         }
       }
     }
-
-
       if(empty($errorEmail)){
         $id++;
         $usuario['id']=$id;
@@ -122,15 +116,56 @@ if($_POST){
         //$archivo=file_get_contents('usuarios.json');
         header('location:home.php');
       }
+  }
+}//aca termina if POST
+}//aca cierra la funcion registroUsuario
 
+function LogIn($email,$password){
+$usuarios=jsonToArray("usuarios.json");
+foreach($usuarios as $usuarioGuardado){
+  if($usuarioGuardado["email"]==$usuario["email"]||PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
+    header('location:pagina-principal.php');
+  }
+  $errorLogIn="email o contraseña inválida";
+}
+    return $errorLogIn;
+}//aca cierra la funcion LogIn
 
+function CargarArchivoPosteo(){
+if($_FILES){
+    if($_FILES["inputImagen"]["error"] != 0){
+      "Error al cargar la imagen";
+    }else{
+      $ext=pathinfo($_FILES["inputImagen"]["name"],PATHINFO_EXTENSION);
+      if($ext!="jpg" && $ext!="jpeg" && $ext!="png"){
+      $errorFoto="Solo se permiten fotos en formato jpg, jpeg o png.<br>";
+    }else{$imagen="uploads/imagen.$ext";
+      move_uploaded_file($_FILES["inputImagen"]["tmp_name"],$imagen);}
+    }
+  if($_FILES["inputVideo"]["error"] != 0){
+    "Error al cargar el Video";
+    }else{
+      $ext=pathinfo($_FILES["inputVideo"]["name"],PATHINFO_EXTENSION);
+      if($ext!="mpg" && $ext!="mov" && $ext!="mpeg" && $ext!="mp4" && $ext!="avi" && $ext!="mpeg-4"){
+      $errorVideo="Solo se permiten videos en formato mpg, mov, mpeg, mp4, avi y mpeg-4.<br>";
+  }else{$video="uploads/video.$ext";
+    move_uploaded_file($_FILES["inputVideo"]["tmp_name"], $video);}
 
+}
+  if($_FILES["inputDoc"]["error"] != 0){
+    "Error al cargar el documento";
+  }else{
+    $ext=pathinfo($_FILES["inputDoc"]["name"],PATHINFO_EXTENSION);
+    if($ext!="doc" && $ext!="docx" && $ext!="pdf"){
+      $errorDoc="Solo se permiten documentos en formato doc, docx y pdf.<br>";
+  }else{
+    $docs="uploads/docs.$ext";
+    move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
   }
 }
-//aca termina if POST
 
 
-
+}}//aca cierra la funcion CargarArchivoPosteo
 
 
  ?>

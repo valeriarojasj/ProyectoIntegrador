@@ -1,5 +1,6 @@
 
 <?php
+session_start();
   require_once('funciones.php');
   $email="";
   $nombre="";
@@ -13,13 +14,9 @@
     $usuarios=jsonToArray("usuarios.json");
 
     foreach ($usuarios as $usuarioGuardado) {
-
       if($usuarioGuardado["email"]==$email){
         $usuarioActual=$usuarioGuardado;
-
-
       }
-
     }
     $nombre=$usuarioActual["nombre"];
     $apellido=$usuarioActual["apellido"];
