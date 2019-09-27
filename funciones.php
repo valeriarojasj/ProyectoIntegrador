@@ -1,17 +1,9 @@
 <?php
-$nombre="";
-$apellido="";
-$email="";
-$password="";
-$confirm="";
-
 $usuarios=[];
-$usuario=[];
-$ext='';
 $jsonUsuarios=NULL;
-$nombreArchivo="";
 $id=0;
-$errorLogIn="";
+
+/*$errorLogIn="";
 $avatar="";
 $errorFoto="";
 $errorVideo="";
@@ -20,7 +12,7 @@ $imagen="";
 $video="";
 $docs="";
 $textoPosteo="";
-
+*/
 
 
   function JsonToArray($unArchivoJson){
@@ -30,65 +22,65 @@ $textoPosteo="";
     return $array;
 }//aca cierra la funcion jsonToArray
 
-function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar="img/avatar-man.png"){
+function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
+  $imagen="img/avatar-man.png";
+  $usuario=[];
+  $ext='';
+  $nombreArchivo="";
   $errorNombre="";
   $errorApellido="";
   $errorEmail="";
   $errorPassword="";
   $errorConfirm="";
-  $errorArchivo="";
+  //$errorArchivo="";
 
   if(strlen($nombre)==0){
     $errorNombre="Ingrese su nombre";
-
-
   }
+
   if(strlen($apellido)==0){
     $errorApellido="Ingrese su apellido";
-
   }
+
   if(strlen($email)==0){
     $errorEmail="Ingrese su email";
-
-
   }else if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)==false){
     $errorEmail="Ingrese un email valido";
-
     $email="";
   }
+
   if(strlen($pass)<8){
     $errorPassword="La contraseña debe tener por lo menos 8 caracteres";
-
   }
 
   if($pass!=$confirm){
     $errorConfirm="Las contraseñas no coinciden";
-
   }
   if($errorNombre=="" && $errorApellido==""&&$errorPassword==""&&$errorConfirm==""&&$errorEmail==""){
 
-    if($_FILES){
-      if($_FILES['avatar']['error']==0){
+    if($avatar!=null){
+      if($avatar['error']==0){
 
-        $ext=pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
+        $ext=pathinfo($avatar['name'],PATHINFO_EXTENSION);
         if($ext!='jpg'&&$ext!='jpeg'&&$ext!='png'){
           $errorArchivo="Formato invalido.Solo se permiten archivos jpg, jpeg o png";
         }else{
-
           $nombreArchivo=$email . ".".$ext;
-          move_uploaded_file($_FILES['avatar']['tmp_name'],'img/'.$nombreArchivo);
-          $usuario["avatar"]='img/'.$nombreArchivo;
+          move_uploaded_file($avatar['tmp_name'],'img/'.$nombreArchivo);
+          $imagen='img/'.$nombreArchivo;
         }
 
       }else{
         $errorArchivo="Error al cargar el archivo";
       }
     }
-    $nombre=$usuario["nombre"];
-    $apellido=$usuario["apellido"];
-    $email=$usuario["email"];
-    $pass=password_hash($_POST["inputPassword1"],PASSWORD_DEFAULT);
-    $pass=$usuario["password"];
+
+    $usuario['avatar']=$imagen;
+    $usuario["nombre"]=$nombre;
+    $usuario["apellido"]=$apellido;
+    $usuario["email"]=$email;
+    $usuario["password"]=password_hash($pass,PASSWORD_DEFAULT);
+
     if(file_exists("usuarios.json")){
       $usuarios=jsonToArray("usuarios.json");
 
@@ -103,7 +95,7 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar="img/av
     }
       if(empty($errorEmail)){
         $id++;
-        $id=$usuario['id'];
+        $usuario['id']=$id;
         $usuarios[]=$usuario;
         $jsonUsuarios=json_encode($usuarios);
         file_put_contents("usuarios.json",$jsonUsuarios);
@@ -113,6 +105,31 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar="img/av
   }
 
 }//aca cierra la funcion registroUsuario
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function LogIn($email,$password){
 $usuarios=jsonToArray("usuarios.json");

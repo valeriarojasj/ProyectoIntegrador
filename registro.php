@@ -7,11 +7,16 @@ $errorEmail="";
 $errorPassword="";
 $errorConfirm="";
 $errorArchivo="";
-if($_POST){
-RegistroUsuario($_POST['name'],$_POST['lastName'],$_POST['email'],$_POST['inputPassword1'],$_POST['confirmPassword1'],$_POST['avatar']);
-var_dump($_POST);
+$avatar=null;
+if($_FILES){
+  $avatar=$_FILES['avatar'];
+}
 
-};
+if($_POST){
+RegistroUsuario($_POST['name'],$_POST['lastName'],$_POST['email'],$_POST['inputPassword1'],$_POST['confirmPassword1'],$avatar);
+
+
+}
 
 
  ?>
@@ -88,57 +93,47 @@ var_dump($_POST);
 </header>
 
 <div class="container">
-
-
-
-<h2>Regístrate ahora!</h2>
-
-    <form method='post' action='registro.php' enctype="multipart/form-data">
-      <div class="row">
+  <h2>Regístrate ahora!</h2>
+  <form method='post' action='registro.php' enctype="multipart/form-data">
+    <div class="row">
       <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-10  mx-auto fondoFormulario">
-
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input name="name" type="text" class="form-control" id="inputName"  placeholder="Tu nombre" value="<?=$nombre?>" required>
-          <small id="nombreHelp" class="form-text text-muted"><?=$errorNombre  ?></small>
-  </div>
-  <div class="form-group">
-    <label for="lastName">Apellido</label>
-    <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" value="<?=$apellido?>" required>
-    <small id="apellidoHelp" class="form-text text-muted"><?=$errorApellido?></small>
-  </div>
-  <!-- &#xf0e0 es el codigo de fontawesome para envelope icon-->
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input name="email" type="email" class="form-control" id="inputEmail1"  placeholder="&#xf0e0; user@example.com" value="<?=$email?>"required>
-        <small id="emaildHelp" class="form-text text-muted"><?=$errorEmail  ?></small>
+          <input name="name" type="text" class="form-control" id="inputName"  placeholder="Tu nombre" value="" required>
+          <small id="nombreHelp" class="form-text text-muted"><?=$errorNombre?></small>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Apellido</label>
+          <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" value="" required>
+          <small id="apellidoHelp" class="form-text text-muted"><?=$errorApellido?></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input name="email" type="email" class="form-control" id="inputEmail1"  placeholder="user@example.com" value=""required>
+          <small id="emaildHelp" class="form-text text-muted"><?=$errorEmail?></small>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword1">Contraseña</label>
+          <input  name="inputPassword1" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" aria-describedby="emailHelp" required>
+          <small id="passwordHelp" class="form-text text-muted"><?=$errorPassword?></small>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword1">Confirmar Contraseña</label>
+          <input name="confirmPassword1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Escribe nuevamente tu contraseña" aria-describedby="emailHelp" required>
+          <small id="confirmHelp" class="form-text text-muted"><?=$errorConfirm  ?></small>
+        </div>
+        <div class="form-group">
+          <input name="avatar" type="file" id="archivo" aria-describedby="archivoHelp">
+          <small id="archivoHelp" class="form-text text-muted"><?=$errorArchivo?></small>
+        </div>
+        <div class="form-group form-check">
+          <input name="recordar" type="checkbox" class="form-check-input" id="check1">
+          <label class="form-check-label" for="check1">Recordar mi usuario y contraseña</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
       </div>
-      <div class="form-group">
-        <label for="inputPassword1">Contraseña</label>
-        <!-- &#xf084 es el codigo de fontawesome para key icon-->
-        <input  name="inputPassword1" type="password" class="form-control" id="inputPassword1" placeholder="&#xf084; Tu contraseña" aria-describedby="emailHelp" required>
-        <small id="passwordHelp" class="form-text text-muted"><?=$errorPassword  ?></small>
-      </div>
-      <!-- &#xf084 es el codigo de fontawesome para key icon-->
-      <div class="form-group">
-        <label for="confirmPassword1">Confirmar Contraseña</label>
-        <input name="confirmPassword1" type="password" class="form-control" id="exampleInputPassword1" placeholder="&#xf084; Escribe nuevamente tu contraseña" aria-describedby="emailHelp" required>
-        <small id="confirmHelp" class="form-text text-muted"><?=$errorConfirm  ?></small>
-      </div>
-      <div class="form-group">
-        <input name="avatar" type="file" id="archivo" aria-describedby="archivoHelp">
-        <small id="archivoHelp" class="form-text text-muted"><?=$errorArchivo  ?></small>
-      </div>
-
-
-      <div class="form-group form-check">
-        <input name="recordar" type="checkbox" class="form-check-input" id="check1">
-        <label class="form-check-label" for="check1">Recordar mi usuario y contraseña</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
-      </div>
-    </form>
+  </form>
 
 </div>
   <!-- script de javascript para bootstrap  al final del body -->

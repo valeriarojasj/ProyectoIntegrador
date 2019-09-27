@@ -1,6 +1,6 @@
 <?php
 require_once('funciones.php');
-var_dump($_POST);
+
 
 
 ?>
@@ -43,17 +43,10 @@ var_dump($_POST);
         <li class="nav-item">
           <a class="nav-link" href="registro.php">Regístrate</a>
         </li>
-
         <li class="nav-item">
-    <a class="nav-link" href="login.php" role="button" >Iniciar Sesion</a>
-
-  </li>
-
-        </form>
-          </button>
+          <a class="nav-link" href="login.php">Iniciar Sesion</a>
         </li>
       </ul>
-
     </div>
   </nav>
 

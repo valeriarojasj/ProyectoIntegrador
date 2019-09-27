@@ -1,6 +1,6 @@
 <?php
 require_once('funciones.php');
-var_dump($_POST);
+
 
 
 
@@ -10,7 +10,7 @@ var_dump($_POST);
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-       <title>Registro</title>
+       <title>Iniciar Sesion</title>
        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
        <!-- bootstrap css stylesheet link antes de todos los demas stylesheet links-->
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -46,43 +46,35 @@ var_dump($_POST);
            <li class="nav-item">
              <a class="nav-link " href="registro.php">Regístrate</a>
            </li>
-
            <li class="nav-item active">
-       <a class="nav-link" href="#">Iniciar Sesión</a>
-
-     </li>
-
-
-
+             <a class="nav-link" href="login.php">Iniciar Sesión</a>
+           </li>
          </ul>
-
        </div>
      </nav>
-
  </header>
 
+
  <div class="container">
-
-
-
- <h2>Bienvenida, para continuar debes ingresar tu email y contraseña</h2>
-
- <form action="pagina-principal.php" method="post">
-<div class="form-group">
-<label for="exampleInputEmail1">Email/Usuario</label>
-<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-
-</div>
-<div class="form-group">
-<label for="exampleInputPassword1">Contraseña</label>
-<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-</div>
-
-<a class =colorAzul href="#">¿Olvidó su contraseña?</a>
-<button type="submit" class="btn btn-primary">Ingresar</button>
-
-</form>
-
+   <h2>Bienvenida, para continuar debes ingresar tu email y contraseña</h2>
+   <form method='post' action='registro.php' enctype="multipart/form-data">
+     <div class="row">
+       <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-10  mx-auto fondoFormulario">
+         <div class="form-group">
+           <label for="email">Email</label>
+           <input name="email" type="email" class="form-control" placeholder="dddddd" value="" required>
+           <small id="email" class="form-text text-muted"></small>
+         </div>
+         <div class="form-group">
+           <label for="inputPassword1">Contraseña</label>
+           <input  name="password" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" value="" required>
+           <small id="passwordHelp" class="form-text text-muted"></small>
+         </div>
+         <a class =colorAzul href="#">¿Olvidó su contraseña?</a>
+         <button type="submit" class="btn btn-primary">Ingresar</button>
+       </div>
+     </div>
+   </form>
  </div>
    <!-- script de javascript para bootstrap  al final del body -->
  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
