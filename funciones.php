@@ -100,7 +100,7 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
         $jsonUsuarios=json_encode($usuarios);
         file_put_contents("usuarios.json",$jsonUsuarios);
         //$archivo=file_get_contents('usuarios.json');
-        header('location:home.php');
+        header('location:login.php');
       }
   }
 
@@ -132,22 +132,28 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
 
 
 function LogIn($email,$password){
-$usuarios=jsonToArray("usuarios.json");
-foreach($usuarios as $usuarioGuardado){
-  if($usuarioGuardado["email"]==$email&&PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
+  $usuarios=jsonToArray("usuarios.json");
+  foreach($usuarios as $usuarioGuardado){
 
-    header('location:pagina-principal.php');
-
+    if($usuarioGuardado["email"]==$email && password_verify($password, $usuarioGuardado["password"])){
+      header('location:pagina-principal.php');exit;
+    }
   }
-
-$errorLogIn="email o contraseña inválida";
-
-}
-
-
-    return $errorLogIn;
-
+  header('location:login.php');
 }//aca cierra la funcion LogIn
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function CargarArchivoPosteo($errorFoto,$errorDoc,$errorVideo){
 if($_FILES){
