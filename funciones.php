@@ -134,12 +134,11 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
 function LogIn($email,$password){
   $usuarios=jsonToArray("usuarios.json");
   foreach($usuarios as $usuarioGuardado){
-
-    if($usuarioGuardado["email"]==$email && password_verify($password, $usuarioGuardado["password"])){
-      header('location:pagina-principal.php');exit;
+    if($usuarioGuardado["email"]==$email&&password_verify($password, $usuarioGuardado["password"])){
+    header('location:pagina-principal.php');exit;
     }
   }
-  header('location:login.php');
+  return "Usuario y/o contraseña invalido";
 }//aca cierra la funcion LogIn
 
 

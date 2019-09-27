@@ -1,7 +1,11 @@
 <?php
 require_once('funciones.php');
+$errorLogin="";
+$password="";
+$email="";
 if(isset($_POST["email"]) && isset($_POST["password"])){
-  logIn($_POST["email"],$_POST["password"]);
+  $errorLogin=logIn($_POST["email"],$_POST["password"]);
+  $email=$_POST["email"];
 }
 
 
@@ -9,23 +13,19 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 
  ?>
 
-  <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-       <title>Iniciar Sesion</title>
-       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-       <!-- bootstrap css stylesheet link antes de todos los demas stylesheet links-->
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-         <!-- script para fontawesome version 5 usando kit con codigo personal para mantener la ultima actualizacion-->
- <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
-   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
- <!-- link a mi css-->
-     <link rel="stylesheet" href="css/style.css">
-
-   </head>
-   <body>
+<!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Iniciar Sesion</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
+      <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
      <header>
        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
          <a class="navbar-brand" href="home.php"><img src="img/logo.png" alt="logoDeRedSocial"><span class="marca">Sharityx</span></a>
@@ -62,14 +62,15 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
            <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-10  mx-auto fondoFormulario">
              <div class="form-group">
                <label for="email">Email</label>
-               <input name="email" type="email" class="form-control" placeholder="Tu email" value="" required>
+               <input name="email" type="email" class="form-control" placeholder="Tu email" value="<?=$email?>" required>
                <small id="email" class="form-text text-muted"></small>
              </div>
              <div class="form-group">
                <label for="inputPassword1">Contraseña</label>
-               <input  name="password" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" value="" required>
-               <small id="passwordHelp" class="form-text text-muted"></small>
+               <input  name="password" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" value="<?=$password?>" required>
+               <small id="passwordHelp" class="form-text text-muted"><?=$errorLogin?></small>
              </div>
+
              <a class =colorAzul href="#">¿Olvidó su contraseña?</a>
              <button type="submit" class="btn btn-primary">Ingresar</button>
            </div>
