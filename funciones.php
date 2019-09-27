@@ -93,11 +93,11 @@ if($_POST){
         $errorArchivo="Error al cargar el archivo";
       }
     }
-    $usuario["nombre"]=$nombre;
-    $usuario["apellido"]=$apellido;
-    $usuario["email"]=$email;
+    $nombre=$usuario["nombre"];
+    $apellido=$usuario["apellido"];
+    $email=$usuario["email"];
     $password=password_hash($_POST["inputPassword1"],PASSWORD_DEFAULT);
-    $usuario["password"]=$password;
+    $password=$usuario["password"];
     if(file_exists("usuarios.json")){
       $usuarios=jsonToArray("usuarios.json");
 
@@ -112,7 +112,7 @@ if($_POST){
     }
       if(empty($errorEmail)){
         $id++;
-        $usuario['id']=$id;
+        $id=$usuario['id'];
         $usuarios[]=$usuario;
         $jsonUsuarios=json_encode($usuarios);
         file_put_contents("usuarios.json",$jsonUsuarios);
@@ -124,14 +124,25 @@ if($_POST){
 }//aca cierra la funcion registroUsuario
 
 function LogIn($email,$password){
+
+
+
+
 $usuarios=jsonToArray("usuarios.json");
 foreach($usuarios as $usuarioGuardado){
-  if($usuarioGuardado["email"]==$usuario["email"]&&PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
+  if($usuarioGuardado["email"]==$email&&PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
+
     header('location:pagina-principal.php');
+
   }
+
   $errorLogIn="email o contraseña inválida";
+
 }
+  
+    header('location:FAQ.php');
     return $errorLogIn;
+
 }//aca cierra la funcion LogIn
 
 function CargarArchivoPosteo($errorFoto,$errorDoc,$errorVideo){

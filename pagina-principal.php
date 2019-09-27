@@ -1,6 +1,9 @@
 
 <?php
   require_once('funciones.php');
+  if($_POST){
+  LogIn($_POST['email'],$_POST['password']);}
+
   $email="";
   $nombre="";
   $apellido="";
