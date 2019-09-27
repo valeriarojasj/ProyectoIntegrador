@@ -44,25 +44,9 @@ var_dump($_POST);
           <a class="nav-link" href="registro.php">Regístrate</a>
         </li>
 
-        <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Iniciar Sesion</a>
-    <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right Login">
-      <form action="pagina-principal.php" method="post">
-  <div class="form-group">
-    <label for="email">Email/Usuario</label>
-    <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <li class="nav-item">
+    <a class="nav-link" href="login.php" role="button" >Iniciar Sesion</a>
 
-  </div>
-  <div class="form-group">
-    <label for="password">Contraseña</label>
-    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-  </div>
-
-  <a class =colorAzul href="#">¿Olvidó su contraseña?</a>
-  <button type="submit" class="btn btn-primary">Ingresar</button>
-
-</form>
-    </div>
   </li>
 
         </form>

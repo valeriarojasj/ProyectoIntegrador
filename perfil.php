@@ -1,6 +1,26 @@
 
 <?php
 session_start();
+/*if(!isset($_SESSION["email"])){
+header('location:login.php');
+}
+echo "Bienvenido";
+*/
+/*
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/footer.css">
+  </head>
+  <body>
+    <form action="logout.php" method="POST"
+    
+  </body>
+</html>
+*/
+
   require_once('funciones.php');
   $email="";
   $nombre="";

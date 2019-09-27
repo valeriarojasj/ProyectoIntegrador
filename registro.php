@@ -1,6 +1,19 @@
 <?php
 session_start();
 require_once('funciones.php');
+$errorNombre="";
+$errorApellido="";
+$errorEmail="";
+$errorPassword="";
+$errorConfirm="";
+$errorArchivo="";
+if($_POST){
+RegistroUsuario($_POST['name'],$_POST['lastName'],$_POST['email'],$_POST['inputPassword1'],$_POST['confirmPassword1'],$_POST['avatar']);
+var_dump($_POST);
+
+};
+
+
  ?>
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -92,7 +105,7 @@ require_once('funciones.php');
   <div class="form-group">
     <label for="lastName">Apellido</label>
     <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" value="<?=$apellido?>" required>
-    <small id="apellidoHelp" class="form-text text-muted"><?=$errorApellido  ?></small>
+    <small id="apellidoHelp" class="form-text text-muted"><?=$errorApellido?></small>
   </div>
   <!-- &#xf0e0 es el codigo de fontawesome para envelope icon-->
       <div class="form-group">

@@ -4,12 +4,7 @@ $apellido="";
 $email="";
 $password="";
 $confirm="";
-$errorNombre="";
-$errorApellido="";
-$errorEmail="";
-$errorPassword="";
-$errorConfirm="";
-$errorArchivo="";
+
 $usuarios=[];
 $usuario=[];
 $ext='';
@@ -35,14 +30,13 @@ $textoPosteo="";
     return $array;
 }//aca cierra la funcion jsonToArray
 
-function RegistroUsuario(){
-if($_POST){
-
-  $nombre=$_POST["name"];
-  $apellido=$_POST["lastName"];
-  $email=$_POST["email"];
-  $password=$_POST["inputPassword1"];
-  $confirm=$_POST["confirmPassword1"];
+function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar="img/avatar-man.png"){
+  $errorNombre="";
+  $errorApellido="";
+  $errorEmail="";
+  $errorPassword="";
+  $errorConfirm="";
+  $errorArchivo="";
 
   if(strlen($nombre)==0){
     $errorNombre="Ingrese su nombre";
@@ -62,19 +56,16 @@ if($_POST){
 
     $email="";
   }
-  if(strlen($password)<8){
+  if(strlen($pass)<8){
     $errorPassword="La contraseña debe tener por lo menos 8 caracteres";
 
   }
-  if(strlen($confirm)<8){
-    $errorConfirm="La contraseña debe tener por lo menos 8 caracteres";
 
-  }
-  if($password!=$confirm){
+  if($pass!=$confirm){
     $errorConfirm="Las contraseñas no coinciden";
 
   }
-  if($errorNombre=="" && $errorApellido==""&&$errorPassword==""&&$errorConfirm==""&&$errorEmail==""&&$errorArchivo==""){
+  if($errorNombre=="" && $errorApellido==""&&$errorPassword==""&&$errorConfirm==""&&$errorEmail==""){
 
     if($_FILES){
       if($_FILES['avatar']['error']==0){
@@ -96,8 +87,8 @@ if($_POST){
     $nombre=$usuario["nombre"];
     $apellido=$usuario["apellido"];
     $email=$usuario["email"];
-    $password=password_hash($_POST["inputPassword1"],PASSWORD_DEFAULT);
-    $password=$usuario["password"];
+    $pass=password_hash($_POST["inputPassword1"],PASSWORD_DEFAULT);
+    $pass=$usuario["password"];
     if(file_exists("usuarios.json")){
       $usuarios=jsonToArray("usuarios.json");
 
@@ -120,14 +111,10 @@ if($_POST){
         header('location:home.php');
       }
   }
-}//aca termina if POST
+
 }//aca cierra la funcion registroUsuario
 
 function LogIn($email,$password){
-
-
-
-
 $usuarios=jsonToArray("usuarios.json");
 foreach($usuarios as $usuarioGuardado){
   if($usuarioGuardado["email"]==$email&&PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
@@ -136,11 +123,11 @@ foreach($usuarios as $usuarioGuardado){
 
   }
 
-  $errorLogIn="email o contraseña inválida";
+$errorLogIn="email o contraseña inválida";
 
 }
-  
-    header('location:FAQ.php');
+
+
     return $errorLogIn;
 
 }//aca cierra la funcion LogIn
