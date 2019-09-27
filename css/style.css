@@ -6,6 +6,7 @@
 
 body{
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+width:100%;
 }
 
 header nav a{
@@ -48,11 +49,14 @@ h5{
 .fondoVerde{
 margin:0;
 padding-left: 2%;
+padding-right: 2%;
+
 }
 
 .fondoAmarillo{
   border: gray solid 1px;
   background-color: white;
+
 }
 
 .fondoGris{
@@ -60,8 +64,10 @@ padding-left: 2%;
 }
 
 .fondoBlanco{
-  background-color: white;
+
   color: black;
+  padding-left: 2%;
+  padding-right: 2%;
   }
 
 img{
@@ -70,6 +76,7 @@ img{
 
 .invitacionesTitulo{
   color:white;
+  width:100%;
 }
 
 .contactosTitulo{
@@ -77,7 +84,10 @@ img{
 }
 
 .tituloSeccion{
-  color:white;
+  background-color: red;
+  padding-left: 2%;
+  padding-right: 2%;
+  width:100%;
 }
 
 .hombre{
@@ -94,7 +104,7 @@ color:green;
 }
 
 .SeccionSuperior{
-  background-color: white;
+  background-color: blue;
   border-radius: 10px;
   font-family: Helvetica;
   font-size: 20px;
@@ -190,11 +200,9 @@ padding-left: 3%;
   margin-top: 2%;
   margin-left: 0;
   margin-right: 0;
-  background-color: rgba(255,255,255,1);
+  background-color: red;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding-left: 3%;
-  padding-right:3%;
   padding-top:1%;
   padding-bottom:1%;
   color: black;
@@ -218,6 +226,9 @@ padding-left: 3%;
   align-self: center;
 
 }
+
+
+
 
 /*@media only screen and (max-width: 600px) {
   .invitacionesTitulo{

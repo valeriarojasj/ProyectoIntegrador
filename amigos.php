@@ -18,6 +18,8 @@ require_once("funciones.php");
 <!-- link a mi css-->
   <link rel="stylesheet" href="css/amigosStyle.css">
   </head>
+  <body>
+
 <header>
   <div class="navegacion">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,12 +83,12 @@ require_once("funciones.php");
 </nav>
   </div>
 </header>
+<div class="contenedorTodo container-fluid">
 
-  <body>
 
-    <div class="container-fluid">
 
-      <div class="row">
+
+
 
 
 
@@ -100,43 +102,54 @@ require_once("funciones.php");
 
 
 
-      <!-- Seccion de Saludo-->
+
 
 
       <!-- Seccion de Total contactos-->
+<div class="paddingArea">
+<div class="row rowTitulo  ">
 
-<div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12 mt-3 TusContactos">
+<div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 mt-3 TusContactos px-md-2 px-sm-2 px-lg-2 px-xl-2">
+<!-- Seccion de Saludo-->
 
+            <div class="seccionSaludo media text-center ">
+              <div class="cajaSaludo ">
 
-            <div class="seccionSaludo media text-left">
               <div class="divAvatar">
-            <img class="fotoPerfil self-align-center" src="img/voluntaria.jpg" alt="">
+            <img class="fotoPerfil align-self-center" src="img/voluntaria.jpg" alt="">
+            <h1 class="saludo align-middle text-wrap text-white text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Mis Contactos</h1>
             </div>
             <div class="media-body areaTitulo ">
-              <h1 class="saludo text-wrap text-primary text-left">Contactos e Invitaciones</h1>
+
               </div>
             </div>
 
+            </div>
+
 </div>
 </div>
-<div class="row">
-          <div class="col-md-9 col-sm-9 col-lg-9 col-12 col-xl-9 mb-3 TusContactos">
 
-          </div>
-          <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 mb-3 col-12 TusInvitaciones">
 
-        </div>
-  </div>
 
 
           <!-- aca comienza la seccion de contactos e invitaciones-->
+
+
+
           <div class="row">
             <!-- aca comienza la seccion de contactos-->
 
+
+
           <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 col-12 fondoRojo">
+<div class="paddingCentroA px-md-1 px-sm-1 px-lg-1 px-xl-1">
+  <div class="areaContactosTitulo">
+
+
             <div class="contactosTitulo">
               <h6 class="tituloSeccion">Mis Amigos (8)</h6>
             </div>
+              </div>
 
 
             <!-- aca empieza un par de contactos-->
@@ -146,11 +159,11 @@ require_once("funciones.php");
 
                   <div class="row">
 
-                    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 col-12 fondoGris   media">
+                    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 col-12 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0 media">
                         <img src="img/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
 
-                    <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 fondoBlanco border border-light    media-body">
+                    <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                         <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                         <h4>Pedro Pérez</h4>
                         <p>Aca va el texto del contacto izq</p>
@@ -166,12 +179,12 @@ require_once("funciones.php");
 
                   <div class="row">
 
-                    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris media">
+                    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  media">
                       <img src="img/woman-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
 
                     </div>
 
-                    <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light media-body">
+                    <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light media-body">
                         <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                       <h4>María García</h4>
                     <p>Aca va el texto del contacto der</p>
@@ -188,11 +201,11 @@ require_once("funciones.php");
 
                     <div class="row">
 
-                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                           <img src="img/man-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
 
-                      <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                      <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                 <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                         <h4>Felipe Álvarez</h4>
                           <p>aca va el texto del contacto izq</p>
@@ -206,11 +219,11 @@ require_once("funciones.php");
 
                     <div class="row">
 
-                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                         <img src="img/woman-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
 
-                      <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                      <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                 <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                         <h4>Isabel Gómez</h4>
                       <p>aca va el texto del contacto der</p>
@@ -227,11 +240,11 @@ require_once("funciones.php");
 
                       <div class="row">
 
-                        <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                        <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                           <img src="img/man-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                         </div>
 
-                        <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                        <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                 <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                             <h4>Andrés Estrada</h4>
                             <p>aca va el texto del contacto izq</p>
@@ -245,11 +258,11 @@ require_once("funciones.php");
 
                       <div class="row">
 
-                        <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                        <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                           <img src="img/woman-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                         </div>
 
-                        <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                        <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                   <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                           <h4>Susana Flórez</h4>
                         <p>aca va el texto del contacto der</p>
@@ -266,11 +279,11 @@ require_once("funciones.php");
 
                         <div class="row">
 
-                          <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                          <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                           <img src="img/man-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                           </div>
 
-                          <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                          <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                 <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                               <h4>Camilo Muñóz</h4>
                               <p>aca va el texto del contacto izq</p>
@@ -284,11 +297,11 @@ require_once("funciones.php");
 
                         <div class="row ">
 
-                          <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                          <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                             <img src="img/woman-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                           </div>
 
-                          <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                          <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                           <a href="mailto:joe@example.com?"><i class="fas fa-comment-dots"></i></a>
                           <h4>Silvia Smith</h4>
                           <p>aca va el texto del contacto der</p>
@@ -299,13 +312,15 @@ require_once("funciones.php");
                       </div>
                     </div><!-- aca termina un par de contactos-->
             </div> <!-- aca termina la seccion de contactos-->
+            </div>
 
             <!-- aca comienza la seccion de invitaciones-->
 
 
 
             <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 fondoVerde">
-              <div class="invitacionesTitulo">
+              <div class="paddingCentroB px-md-1 px-sm-1 px-lg-1 px-xl-1">
+              <div class="invitacionesTitulo mt-2 mt-md-0 px-sm-0 px-lg-0 px-xl-0">
                 <h6 class="tituloSeccion" id="titulo2">Mis Invitaciones (3)</h6>
               </div>
 
@@ -315,11 +330,11 @@ require_once("funciones.php");
 
                 <div class="row">
 
-                  <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+                  <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                       <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
                   </div>
 
-                  <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+                  <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
                   <a href="#"><i class="fas fa-user-check"></i></a>
                   <a href="#"><i class="fas fa-user-times"></i></a>
                     <h4>Juan Álvarez</h4>
@@ -338,11 +353,11 @@ require_once("funciones.php");
 
             <div class="row">
 
-              <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+              <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                   <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv card-img img-fluid max-width:100% height:auto">
               </div>
 
-              <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light  media-body">
+              <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light  media-body">
                 <a href="#"><i class="fas fa-user-check"></i></a>
                 <a href="#"><i class="fas fa-user-times"></i></a>
 
@@ -357,15 +372,16 @@ require_once("funciones.php");
         </div>   <!-- aca termina una invitacion-->
         <!-- aca comienza una invitacion-->
       <div class="row">
+
         <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 fondoAmarillo  hombre ">
 
         <div class="row">
 
-          <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris   media">
+          <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 fondoGris px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
               <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center  fotoInv  card-img img-fluid max-width:100% height:auto">
           </div>
 
-          <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco border border-light   media-body">
+          <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 fondoBlanco px-md-2 px-sm-2 px-lg-2 px-xl-2 border border-light   media-body">
             <a href="#"><i class="fas fa-user-check"></i></a>
             <a href="#"><i class="fas fa-user-times"></i></a>
 
@@ -373,18 +389,22 @@ require_once("funciones.php");
               <p>aca va el texto del contacto izq</p>
           </div>
 
-        </div>
 
-      </div>
+
+
 
     </div>   <!-- aca termina una invitacion-->
 
 
 
     </div><!-- cierra columna de invitaciones-->
-
+</div>
+</div>
   </div> <!-- cierra fila de contactos e invitaciones-->
-
+</div>
+<footer>
+</footer>
+</div>
   </div>
    <!-- cierra filaTodo-->
 <!-- cierra container-->

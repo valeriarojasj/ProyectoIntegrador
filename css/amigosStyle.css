@@ -4,150 +4,10 @@
   box-sizing: border-box;
 }
 
-body{
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
-}
-
-header nav a{
-  color: green;
-}
-
-input{
-  font-family: 'Helvetica', fontawesome;
-  font-weight: 900;
-}
-
-
-
-
-h2{
-  text-align: center;
-color: white;
-margin-top: 1%;
-}
-
-
-
-h5{
-  color: rgba(2,0,36,1);
-}
-
-
-.fondoVerde{
-margin:0;
-padding-left: 2%;
-padding-right: 2%;
-}
-.fondoRojo{
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-.fondoAmarillo{
-  border: gray solid 1px;
-  background-color: white;
-
-}
-
-.fondoGris{
-}
-
-.fondoBlanco{
-
-  color: black;
-  }
-
-img{
-  width:100%;
-}
-
-.invitacionesTitulo{
-  color:white;
-}
-
-.contactosTitulo{
-  color:white;
-}
-
-.tituloSeccion{
-  color:white;
-
-}
-
-nav a img{
-  width: 58px;
-}
-
 .marca{
 font-size: 20px;
 font-family: 'Mansalva', cursive;
 color:green;
-}
-
-.SeccionSuperior{
-  background-color: white;
-  border-radius: 10px;
-  font-family: Helvetica;
-  font-size: 20px;
-  text-align: center;
-  color:black;
-}
-
-.fa-user-check{
-  color:green;
-}
-
-.saludo{
-  color: black;
-}
-
-.TusContactos{
-  background-color: white;
-}
-
-.TusInvitaciones{
-    background-color: white;
-  }
-
-a{
-  text-decoration: none;
-}
-
-.fa-user-times{
-  color:red;
-}
-
-div.dropdown-menu{
-  padding: 10px;
-}
-
-navbar-brand img{
-  width: 58px;
-}
-
-
-ul.navbar-nav{
-  width: 95%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.navbar-nav li{
-}
-
-.formularioLogin{
-}
-
-.Login{
-  width: 280px;
-  padding:10px;
-}
-
-.areaLogin{
-}
-
-.colorAzul{
-  color:#007bff;
 }
 
 .textoIcono{
@@ -160,38 +20,148 @@ ul.navbar-nav{
   text-align: center;
 }
 
-
-
-.fotoPerfil{
-  border-radius: 150px;
-  width: 40%;
-  border-color: rgba(0,0,0,0.7)
-  border-width: medium;
-  border-style: solid;
+header nav a{
+  color: green;
 }
 
-.seccionSaludo{
-  text-align: left;
-  margin-top: 2%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-top:1%;
-  padding-bottom:1%;
-  color: black;
+div.dropdown-menu{
+  padding: 10px;
 }
 
-.areaTitulo{
-  text-align: left;
+nav.navbar a.navbar-brand img{
+  width: 58px;
 }
 
-.fotoInv{
-  align-self:center;
-
+div.navbar-collapse ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
 }
 
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
 
-/*@media only screen and (max-width: 600px) {
-  .invitacionesTitulo{
-    display: block;
-    color:white;
-  }*/
+body{
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+
+}
+.contenedorTodo{
+  margin:0;
+}
+
+nav{
+width: 100%;
+margin-bottom: 1%;
+}
+
+.divAvatar img{
+    border-radius: 50%;
+    height:6em;
+    border-color: 	rgb(153,153,153);
+    border-width: medium;
+    border-style: solid;
+
+  }
+
+  .divAvatar {
+      text-align: center;
+      color: white;
+    }
+
+    .seccionSaludo{
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0%;
+      padding-right: 0%;
+      color: black;
+      width: 100%;
+      margin-bottom: 1%;
+    }
+
+    .TusContactos{
+      width:100%;
+
+
+    }
+
+
+
+    .invitacionesTitulo{
+      color:white;
+      width:100%;
+    }
+
+    .contactosTitulo{
+      color:white;
+    }
+    .fondoAmarillo{
+      border: gray solid 1px;
+      background-color: white;
+    /*no agregar aca padding*/
+    }
+    .fondoBlanco{
+
+      color: black;
+
+      }
+
+    .fondoGris{
+      padding: 1%;
+    }
+      .fondoGris img{
+        border-radius: 50%;
+        width: 100%;
+        border-color: 	rgb(153,153,153);
+        border-width: medium;
+        border-style: solid;
+
+      }
+
+      .fondoVerde{
+      margin:0;
+      /*no agregar aca padding a la derecha*/
+
+      }
+
+      .fondorojo{
+      margin:0;
+      /*no agregar aca padding a la derecha*/
+
+      }
+
+      .fa-user-times{
+        color:red;
+      }
+
+      .fa-user-check{
+        color:green;
+      }
+
+      .paddingArea{
+
+
+      }
+
+      .paddingCentroA{
+
+      }
+
+      .paddingCentroB{
+
+      }
+      .cajaSaludo{
+
+        align-content: center;
+        width: 100%;
+      }
+      h1{
+        font-size: 30px;
+        align-self: center;
+      }
+
+.

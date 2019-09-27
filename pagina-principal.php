@@ -11,6 +11,48 @@
   $imagen="";
   $video="";
   $docs="";
+
+
+
+if($_POST){
+  if(isset($_POST["textoPosteo"])){
+  $textoPosteo=$_POST["textoPosteo"];}
+}
+if($_FILES){
+    if($_FILES["inputImagen"]["error"] != 0){
+      "Error al cargar la imagen";
+    }else{
+      $ext=pathinfo($_FILES["inputImagen"]["name"],PATHINFO_EXTENSION);
+      if($ext!="jpg" && $ext!="jpeg" && $ext!="png"){
+      $errorFoto="Solo se permiten fotos en formato jpg, jpeg o png.<br>";
+    }else{$imagen="uploads/imagen.$ext";
+      move_uploaded_file($_FILES["inputImagen"]["tmp_name"],$imagen);}
+    }
+  if($_FILES["inputVideo"]["error"] != 0){
+    "Error al cargar el Video";
+    }else{
+      $ext=pathinfo($_FILES["inputVideo"]["name"],PATHINFO_EXTENSION);
+      if($ext!="mpg" && $ext!="mov" && $ext!="mpeg" && $ext!="mp4" && $ext!="avi" && $ext!="mpeg-4"){
+      $errorVideo="Solo se permiten videos en formato mpg, mov, mpeg, mp4, avi y mpeg-4.<br>";
+  }else{$video="uploads/video.$ext";
+    move_uploaded_file($_FILES["inputVideo"]["tmp_name"], $video);}
+
+}
+  if($_FILES["inputDoc"]["error"] != 0){
+    "Error al cargar el documento";
+  }else{
+    $ext=pathinfo($_FILES["inputDoc"]["name"],PATHINFO_EXTENSION);
+    if($ext!="doc" && $ext!="docx" && $ext!="pdf"){
+      $errorDoc="Solo se permiten documentos en formato doc, docx y pdf.<br>";
+  }else{
+    $docs="uploads/docs.$ext";
+    move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
+  }
+}
+
+
+}
+
   if($_GET){
 
     $email=$_GET["email"];
@@ -36,7 +78,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Pagina Principal</title>
+    <title>Sharityx/Pagina Principal</title>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -142,7 +184,6 @@
               <li class="text-left">Feb 2011 - May 2018</li>
             </ul>
 
-
         </div>
           <h4 class="text-primary"><b>Ocupación Actual:</b></h4>
           <ul class="perfilContenido" type="none">
@@ -154,22 +195,25 @@
             <li class="text-left">Lima, Peru</li>
           </ul>
         </div><!--cierra el div de mi perfil-->
-      </div> <!--cierra el div de la columna-->
+      </div> <!--cierra el div de la columna Izq-->
+
+
+
         <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6  seccionCentral">
           <div class="novedades">
           <div class="posteos">
 
             <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
           Quieres postear algo?
           </button>
 
           <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
              <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Qué quieres compartir?</h5>
+                  <h5 class="modal-title" id="ModalLabel">Qué quieres compartir?</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -181,7 +225,7 @@
 
 
                       <div class="form-group">
-                        <select class="custom-select" >
+                        <select class="custom-select" name="areaInteres">
                           <option value="">Area de interés</option>
                           <option value="1">Salud</option>
                           <option value="2">Educación</option>
@@ -189,67 +233,67 @@
                           <option value="4">Medio Ambiente</option>
                         </select>
                       </div>     <!--cierra el div de las opciones de areas de interes-->
-  <div class="form-group">
-    <select class="custom-select" >
-      <option value="">Tipo de posteo</option>
-      <option value="1">Donación</option>
-      <option value="2">Evento Proximo</option>
-      <option value="3">Evento Pasado</option>
-      <option value="4">Otros</option>
-      </select>
 
-    </div> <!--cierra el div de las opciones de tipo de posteo-->
+                    <div class="form-group">
+                      <select class="custom-select" name="tipoPosteo" >
+                        <option value="">Tipo de posteo</option>
+                        <option value="1">Donación</option>
+                        <option value="2">Evento Próximo</option>
+                        <option value="3">Evento Pasado</option>
+                        <option value="4">Otros</option>
+                        </select>
+                    </div> <!--cierra el div de las opciones de tipo de posteo-->
+
+                    <div class="mb-3 divPosteo">
+                      <textarea name="textoPosteo" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
+                      <div class="invalid-feedback">
+                        <!--Aca puede ir el mensaje de error si esta vacio-->
+                      </div>     <!--cierra el div del  mensaje de error del text area-->
+                    </div>     <!--cierra el div del textArea-->
+
+
   <div class="listaBotones">
-
-
     <ul class="list-group list-group-horizontal" type="none">
-
-
             <div class="form-group fotoUpload mr-3">
               <li>
               <label for="inputImagen"><i class="fas fa-camera align-middle"></i></label>
-              <input name="inputImagen" type="file" id="inputImagen" ></li>
-
-
+              <input name="inputImagen" type="file" id="inputImagen" >
+            </li>
             </div> <!--cierra el div de subir foto-->
-
-
-
-
-
         <div class="form-group videoUpload mr-3">
-<li>
+            <li>
               <label for="inputVideo"><i class="fas fa-video align-middle"></i></label>
-              <input name="inputVideo" type="file" id="inputVideo"></li>
-
-            </div><!--cierra el div de subir video-->
-
-
+              <input name="inputVideo" type="file" id="inputVideo">
+            </li>
+        </div><!--cierra el div de subir video-->
         <div class="form-group docUpload mr-3">
           <li>
               <label for="inputDoc"><i class="fas fa-paperclip align-middle"></i></label>
-              <input name="inputDoc" type="file" id="inputDoc"></li>
-            </div> <!--cierra el div de subir documento-->
-
-    </ul>
+              <input name="inputDoc" type="file" id="inputDoc">
+          </li>
+        </div> <!--cierra el div de subir documento-->
+      </ul>
   </div> <!--cierra el div de la lista de botones-->
-  <span><?=$errorFoto ." "?> </span>
-  <span><?=$errorVideo." "?></span>
-  <span><?=$errorDoc . " "?></span>
+
+      <span><?=$errorFoto ." "?> </span>
+      <span><?=$errorVideo." "?></span>
+      <span><?=$errorDoc . " "?></span>
 </div> <!--cierra el div del body del modal-->
 
-
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<div class="modal-footer">
+        <button type="button " class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary" value="Enviar">Guardar Cambios</button>
-      </div> <!--cierra el footer del modal-->
-        </form><!--cierra el form de agregar posteo-->
+</div> <!--cierra el footer del modal-->
+                        </form><!--cierra el form de agregar posteo-->
 
     </div><!--cierra el contenido del modal-->
   </div> <!--cierra el dialogo del modal-->
 </div><!--cierra el modal-->
-<div class="novedad"><!--comienza un posteo-->
+</div>  <!--cierra posteos-->
+
+
+<div class="novedadYcomentarios">
+<div class="novedad "><!--comienza un posteo-->
   <div class=" perfilPost media">
   <img class="avatarPosteo" src="<?=$avatar?>" alt="">
   <div class="media-body nombrePosteo">
@@ -263,25 +307,103 @@
  <media src="<?=$video?>" class="videoPosteo" alt="">
    </div>
    <div class="mb-3 divPosteo">
-     <textarea name="textoPosteo" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
+     <p><?=$textoPosteo?></p>
      <div class="invalid-feedback">
        <!--Aca puede ir el mensaje de error si esta vacio-->
      </div>     <!--cierra el div del  mensaje de error del text area-->
    </div>     <!--cierra el div del textArea-->
-<ul type="none" class="list-group list-group-horizontal acciones">
-<li class="mr-3"><a class="textoAcciones" t href="#"><i class=" iconosAcciones fas fa-thumbs-up">      </i> Me gusta </a></li>
-  <li class= "mr-3">  <a class="textoAcciones text-primary" href="#"><i class=" text-primary iconosAcciones fas fa-comment-alt">     </i> Comentar  </a></li>
-  <li class ="mr-3">  <a class="textoAcciones"href="#"><i class=" iconosAcciones fas fa-share"> </i> Compartir   </a></li>
-   </ul>
-</div><!--cierra un posteo-->
+
+
+   <div class="list-group list-group-horizontal acciones">
+     <div class="divMeGusta">
+       <button class="btn text-primary" type="button" id="meGustaButton">
+         <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+       </button>
+
+     </div>
+     <div class="dropdown dropComentar">
+       <button class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios8" aria-expanded="false" aria-controls="collapseComentarios8">
+         <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+       </button>
+
+
+     </div>
+     <div class="dropdown dropCompartir">
+       <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+       </button>
+       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+         <a class="dropdown-item" href="#">Enviar como mensaje</a>
+         <a class="dropdown-item" href="#">Enviar como publicación</a>
+       </div>
+     </div>
+
+   </div><!--cierra un posteo-->
+   <div class="row">
+
+
+    <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios8">
+      <form class="" action="pagina-principal.php#areaComentarios" method="post">
+
+
+          <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+   <div class="divBotonEnviar">
+
+
+        <button name="submitComentario" type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+        </div>
+      </form>
+        </div>
+
+
+   </div>
+   <div class="row rowListaComentarios">
+
+
+     <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios8">
+       <ul class="list-unstyled">
+<li class="media rounded liComentarioLista p-2">
+
+<img src="img/avatar-man.png" class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+<b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
+</div>
+</li>
+<li class="media my-4 rounded liComentarioLista p-2">
+<img src="img/avatar-man.png"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+<b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
+</div>
+</li>
+<li class="media rounded liComentarioLista p-2">
+<img src="img/avatar-man.png"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+<b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
+</div>
+</li>
+</ul>
 
 
 
 
+</div> <!--CIERRA EL DIV DE LISTA DE COMENTARIOS-->
 
-        </div><!--cierra agregar posteo-->
+
+</div> <!--CIERRA EL ROW DE LISTA DE COMENTARIOS-->
+
+
+   </div>
+
+
+
+</div> <!--CIERRA NOVEDADES Y COMENTARIOS-->
+
+
           <!--noticias-->
           <h2>Ultimas novedades</h2>
+          <div class="novedadYcomentarios">
+
+
           <div class="novedad"><!--comienza un posteo-->
             <div class="perfilPost media">
            <img src="img/woman-1-500px.jpg" class="avatarPosteo"alt="">
@@ -297,8 +419,88 @@
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
-           <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
+
+           <div class="list-group list-group-horizontal acciones">
+             <div class="divMeGusta">
+               <button class="btn text-primary" type="button" id="meGustaButton">
+                 <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+               </button>
+
+             </div>
+             <div class="dropdown dropComentar">
+               <button   class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios2" aria-expanded="false" aria-controls="collapseComentarios2">
+                 <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+               </button>
+
+
+             </div>
+             <div class="dropdown dropCompartir">
+               <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item" href="#">Enviar como mensaje</a>
+                 <a class="dropdown-item" href="#">Enviar como publicación</a>
+               </div>
+             </div>
+
           </div><!--cierra un posteo-->
+          <div class="row">
+
+
+            <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios2">
+              <form class="" action="pagina-principal.php" method="post">
+
+
+                  <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+<div class="divBotonEnviar">
+
+
+                <button name="submitComentario" type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                </div>
+              </form>
+                </div>
+  </div>
+                <div class="row rowListaComentarios">
+
+
+                  <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios2">
+                    <ul class="list-unstyled">
+  <li class="media rounded liComentarioLista p-2">
+
+    <img src="img/man-1-500px.jpg" class="mr-3 avatarComentarios" alt="...">
+    <div class="media-body">
+      <b>Pedro Perez</b> Quiero participar!
+    </div>
+  </li>
+  <li class="media my-4 rounded liComentarioLista p-2">
+    <img src="img/woman-1-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+    <div class="media-body">
+      <b>Maria Martinez</b> Como me inscribo?
+    </div>
+  </li>
+  <li class="media rounded liComentarioLista p-2">
+    <img src="img/woman-4-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+    <div class="media-body">
+        <b>Silvia Smith</b> Yo tambien quiero!
+    </div>
+  </li>
+</ul>
+
+
+
+
+                      </div>
+
+
+          </div>
+
+
+
+        </div>
+      </div>  <!--cierra novedadYcomentarios-->
+
+        <div class="novedadYcomentarios">
           <div class="novedad"><!--comienza un posteo-->
             <div class="perfilPost media">
            <img src="img/woman-2-500px.jpg" class="avatarPosteo" alt="">
@@ -313,9 +515,93 @@
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
-           <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
-          </div><!--cierra un posteo-->
-          <div class="novedad"> <!--comienza un posteo-->
+
+           <div class="list-group list-group-horizontal acciones">
+             <div class="divMeGusta">
+               <button class="btn text-primary" type="button" id="meGustaButton">
+                 <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+               </button>
+
+             </div>
+             <div class="dropdown dropComentar">
+               <button class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios3" aria-expanded="false" aria-controls="collapseComentarios3">
+                 <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+               </button>
+
+
+             </div>
+             <div class="dropdown dropCompartir">
+               <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item" href="#">Enviar como mensaje</a>
+                 <a class="dropdown-item" href="#">Enviar como publicación</a>
+               </div>
+             </div>
+
+           </div><!--cierra un posteo-->
+           <div class="row">
+
+
+            <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios3">
+              <form class="" action="pagina-principal.php#areaComentarios" method="post">
+
+
+                  <textarea class = "comentarioNuevo rounded p-2" name="comentarioNuevo" rows="2" ></textarea>
+           <div class="divBotonEnviar">
+
+
+                <button type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                </div>
+              </form>
+                </div>
+
+
+           </div>
+
+           <div class="row rowListaComentarios">
+
+
+             <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios3">
+               <ul class="list-unstyled">
+<li class="media rounded liComentarioLista p-2">
+
+<img src="img/man-1-500px.jpg" class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+ <b>Pedro Perez</b> Quiero participar!
+</div>
+</li>
+<li class="media my-4 rounded liComentarioLista p-2">
+<img src="img/woman-1-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+ <b>Maria Martinez</b> Como me inscribo?
+</div>
+</li>
+<li class="media rounded liComentarioLista p-2">
+<img src="img/woman-4-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+   <b>Silvia Smith</b> Yo tambien quiero!
+</div>
+</li>
+</ul>
+
+
+
+
+                 </div>
+
+
+     </div>
+
+
+
+   </div>
+ </div>  <!--cierra novedadYcomentarios-->
+
+           <div class="novedadYcomentarios">
+
+           <div class="novedad"> <!--comienza un posteo-->
             <div class="perfilPost media">
            <img src="img/man-1-500px.jpg" class="avatarPosteo" alt="">
            <div class="media-body nombrePosteo">
@@ -329,8 +615,90 @@
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
-           <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
-          </div> <!--cierra un posteo-->
+
+                      <div class="list-group list-group-horizontal acciones">
+                        <div class="divMeGusta">
+                          <button class="btn text-primary" type="button" id="meGustaButton">
+                            <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+                          </button>
+
+                        </div>
+                        <div class="dropdown dropComentar">
+                          <button class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios4" aria-expanded="false" aria-controls="collapseComentarios4">
+                            <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+                          </button>
+
+
+                        </div>
+                        <div class="dropdown dropCompartir">
+                          <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Enviar como mensaje</a>
+                            <a class="dropdown-item" href="#">Enviar como publicación</a>
+                          </div>
+                        </div>
+
+                      </div><!--cierra un posteo-->
+                      <div class="row">
+
+
+                       <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios4">
+                         <form class="" action="pagina-principal.php#areaComentarios" method="post">
+
+
+                             <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+                      <div class="divBotonEnviar">
+
+
+                           <button type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                           </div>
+                         </form>
+                           </div>
+
+
+                      </div>
+
+                      <div class="row rowListaComentarios">
+
+
+                        <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios4">
+                          <ul class="list-unstyled">
+        <li class="media rounded liComentarioLista p-2">
+
+          <img src="img/man-1-500px.jpg" class="mr-3 avatarComentarios" alt="...">
+          <div class="media-body">
+            <b>Pedro Perez</b> Quiero participar!
+          </div>
+        </li>
+        <li class="media my-4 rounded liComentarioLista p-2">
+          <img src="img/woman-1-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+          <div class="media-body">
+            <b>Maria Martinez</b> Como me inscribo?
+          </div>
+        </li>
+        <li class="media rounded liComentarioLista p-2">
+          <img src="img/woman-4-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+          <div class="media-body">
+              <b>Silvia Smith</b> Yo tambien quiero!
+          </div>
+        </li>
+      </ul>
+
+
+
+
+                            </div>
+
+
+                </div>
+
+
+
+              </div>
+            </div>  <!--cierra novedadYcomentarios-->
+<div class="novedadYcomentarios">
           <div class="novedad"> <!--comienza un posteo-->
             <div class="perfilPost media">
            <img src="img/man-2-500px.jpg" class="avatarPosteo" alt="">
@@ -345,8 +713,91 @@
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
-           <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
-          </div><!--cierra un posteo-->
+
+
+                                 <div class="list-group list-group-horizontal acciones">
+                                   <div class="divMeGusta">
+                                     <button class="btn text-primary" type="button" id="meGustaButton">
+                                       <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+                                     </button>
+
+                                   </div>
+                                   <div class="dropdown dropComentar">
+                                     <button class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios5" aria-expanded="false" aria-controls="collapseComentarios5">
+                                       <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+                                     </button>
+
+
+                                   </div>
+                                   <div class="dropdown dropCompartir">
+                                     <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+                                     </button>
+                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                       <a class="dropdown-item" href="#">Enviar como mensaje</a>
+                                       <a class="dropdown-item" href="#">Enviar como publicación</a>
+                                     </div>
+                                   </div>
+
+                                 </div><!--cierra un posteo-->
+                                 <div class="row">
+
+
+                                  <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios5">
+                                    <form class="" action="pagina-principal.php#areaComentarios" method="post">
+
+
+                                        <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+                                 <div class="divBotonEnviar">
+
+
+                                      <button type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                                      </div>
+                                    </form>
+                                      </div>
+
+
+                                 </div>
+
+                                 <div class="row rowListaComentarios">
+
+
+                                   <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios5">
+                                     <ul class="list-unstyled">
+                   <li class="media rounded liComentarioLista p-2">
+
+                     <img src="img/man-1-500px.jpg" class="mr-3 avatarComentarios" alt="...">
+                     <div class="media-body">
+                       <b>Pedro Perez</b> Quiero participar!
+                     </div>
+                   </li>
+                   <li class="media my-4 rounded liComentarioLista p-2">
+                     <img src="img/woman-1-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+                     <div class="media-body">
+                       <b>Maria Martinez</b> Como me inscribo?
+                     </div>
+                   </li>
+                   <li class="media rounded liComentarioLista p-2">
+                     <img src="img/woman-4-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+                     <div class="media-body">
+                         <b>Silvia Smith</b> Yo tambien quiero!
+                     </div>
+                   </li>
+                 </ul>
+
+
+
+
+                                       </div>
+
+
+                           </div>
+
+
+
+                         </div>
+                       </div>  <!--cierra novedadYcomentarios-->
+      <div class="novedadYcomentarios">
           <div class="novedad"><!--comienza un posteo-->
           <div class="perfilPost media">
          <img src="img/voluntaria.jpg" class="avatarPosteo" alt="">
@@ -361,8 +812,89 @@
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
-           <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
-          </div><!--cierra un posteo-->
+           <div class="list-group list-group-horizontal acciones">
+             <div class="divMeGusta">
+               <button class="btn text-primary" type="button" id="meGustaButton">
+                 <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+               </button>
+
+             </div>
+             <div class="dropdown dropComentar">
+               <button class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios6" aria-expanded="false" aria-controls="collapseComentarios6">
+                 <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+               </button>
+
+
+             </div>
+             <div class="dropdown dropCompartir">
+               <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item" href="#">Enviar como mensaje</a>
+                 <a class="dropdown-item" href="#">Enviar como publicación</a>
+               </div>
+             </div>
+
+           </div><!--cierra un posteo-->
+           <div class="row">
+
+
+            <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios6">
+              <form class="" action="pagina-principal.php#areaComentarios" method="post">
+
+
+                  <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+           <div class="divBotonEnviar">
+
+
+                <button type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                </div>
+              </form>
+                </div>
+
+
+           </div>
+
+           <div class="row rowListaComentarios">
+
+
+             <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios6">
+               <ul class="list-unstyled">
+<li class="media rounded liComentarioLista p-2">
+
+<img src="img/man-1-500px.jpg" class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+ <b>Pedro Perez</b> Quiero participar!
+</div>
+</li>
+<li class="media my-4 rounded liComentarioLista p-2">
+<img src="img/woman-1-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+ <b>Maria Martinez</b> Como me inscribo?
+</div>
+</li>
+<li class="media rounded liComentarioLista p-2">
+<img src="img/woman-4-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+   <b>Silvia Smith</b> Yo tambien quiero!
+</div>
+</li>
+</ul>
+
+
+
+
+                 </div>
+
+
+     </div>
+
+
+
+   </div>
+ </div>  <!--cierra novedadYcomentarios-->
+          <div class="novedadYcomentarios">
           <div class="novedad"><!--comienza un posteo-->
           <div class="perfilPost media">
            <img src="img/woman-4-500px.jpg" class="avatarPosteo" alt="">
@@ -377,11 +909,91 @@
            <h5>Cantidad de voluntarios: 12</h5>
            <h5>Lugar: Lima</h5>
            <h5>Detalles: se necesitan preferentemente maestras y psicologas</h5>
-           <h5>Deja tu comentario<ion-icon name="chatbubbles"></ion-icon></h5>
-         </div><!--cierra un posteo-->
+
+           <div class="list-group list-group-horizontal acciones">
+             <div class="divMeGusta">
+               <button class="btn text-primary" type="button" id="meGustaButton">
+                 <i class=" text-primary iconosAcciones fas fa-thumbs-up">      </i> Me gusta
+               </button>
+
+             </div>
+             <div class="dropdown dropComentar">
+               <button class="btn text-primary" type="button" data-toggle="collapse" data-target="#collapseComentarios7" aria-expanded="false" aria-controls="collapseComentarios7">
+                 <i class=" text-primary iconosAcciones fas fa-comment-alt"></i> Comentar
+               </button>
 
 
-         </div>
+             </div>
+             <div class="dropdown dropCompartir">
+               <button class="btn text-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <i class=" text-primary iconosAcciones fas fa-share"> </i> Compartir
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                 <a class="dropdown-item" href="#">Enviar como mensaje</a>
+                 <a class="dropdown-item" href="#">Enviar como publicación</a>
+               </div>
+             </div>
+
+           </div><!--cierra un posteo-->
+           <div class="row">
+
+
+            <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios7">
+              <form class="" action="pagina-principal.php#areaComentarios" method="post">
+
+
+                  <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+           <div class="divBotonEnviar">
+
+
+                <button type="submit" class="btn btn-primary botonEnviar">Enviar</button>
+                </div>
+              </form>
+                </div>
+
+
+           </div>
+
+           <div class="row rowListaComentarios">
+
+
+             <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios7">
+               <ul class="list-unstyled">
+<li class="media rounded liComentarioLista p-2">
+
+<img src="img/man-1-500px.jpg" class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+ <b>Pedro Perez</b> Quiero participar!
+</div>
+</li>
+<li class="media my-4 rounded liComentarioLista p-2">
+<img src="img/woman-1-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+ <b>Maria Martinez</b> Como me inscribo?
+</div>
+</li>
+<li class="media rounded liComentarioLista p-2">
+<img src="img/woman-4-500px.jpg"  class="mr-3 avatarComentarios" alt="...">
+<div class="media-body">
+   <b>Silvia Smith</b> Yo tambien quiero!
+</div>
+</li>
+</ul>
+
+
+
+
+                 </div>
+
+
+     </div>
+
+
+
+   </div>
+ </div>  <!--cierra novedadYcomentarios-->
+
+</div><!--cierra novedades-->
         </div> <!--cierra el div de la columna central-->
         <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionDerecha">
           <div class="publicidad">
@@ -405,7 +1017,7 @@
         </div> <!--cierra el div de publicidad-->
         </div><!--cierra el div de la columna derecha-->
       </div> <!--cierra el div de row-->
-
+</div>
 
 <footer>
 

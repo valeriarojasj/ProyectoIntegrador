@@ -24,6 +24,9 @@ $errorDoc="";
 $imagen="";
 $video="";
 $docs="";
+$textoPosteo="";
+
+
 
   function JsonToArray($unArchivoJson){
 
@@ -123,7 +126,7 @@ if($_POST){
 function LogIn($email,$password){
 $usuarios=jsonToArray("usuarios.json");
 foreach($usuarios as $usuarioGuardado){
-  if($usuarioGuardado["email"]==$usuario["email"]||PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
+  if($usuarioGuardado["email"]==$usuario["email"]&&PASSWORD_VERIFY($password, $usuarioGuardado["password"])){
     header('location:pagina-principal.php');
   }
   $errorLogIn="email o contraseña inválida";
@@ -131,7 +134,7 @@ foreach($usuarios as $usuarioGuardado){
     return $errorLogIn;
 }//aca cierra la funcion LogIn
 
-function CargarArchivoPosteo(){
+function CargarArchivoPosteo($errorFoto,$errorDoc,$errorVideo){
 if($_FILES){
     if($_FILES["inputImagen"]["error"] != 0){
       "Error al cargar la imagen";
@@ -167,5 +170,11 @@ if($_FILES){
 
 }}//aca cierra la funcion CargarArchivoPosteo
 
+function Posteo(){
+if($_POST){
+$textoPosteo=$_POST['textoPosteo'];
+return $textoPosteo;
+
+}}
 
  ?>
