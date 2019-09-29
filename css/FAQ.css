@@ -1,10 +1,7 @@
+@import url("general.css");
 nav a img{width: 50px;}
 
-.marca{
-  font-size: 20px;
-  font-family: 'Mansalva', cursive;
-  color:green;
-}
+
 
 .Login{
   width: 280px;

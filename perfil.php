@@ -16,7 +16,7 @@ echo "Bienvenido";
   </head>
   <body>
     <form action="logout.php" method="POST"
-    
+
   </body>
 </html>
 */

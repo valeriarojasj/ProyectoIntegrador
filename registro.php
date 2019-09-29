@@ -16,7 +16,7 @@ RegistroUsuario($_POST['name'],$_POST['lastName'],$_POST['email'],$_POST['inputP
 }
  ?>
 
- 
+
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

@@ -3,6 +3,9 @@ require_once('funciones.php');
 $errorLogin="";
 $password="";
 $email="";
+if(isset($_POST["mantenermeLogeado"])){
+  header('location:pagina-principal.php');
+}
 if(isset($_POST["email"]) && isset($_POST["password"])){
   $errorLogin=logIn($_POST["email"],$_POST["password"]);
   $email=$_POST["email"];
@@ -66,6 +69,10 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
                <label for="inputPassword1">Contraseña</label>
                <input  name="password" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" value="<?=$password?>" required>
                <small id="passwordHelp" class="form-text text-muted"><?=$errorLogin?></small>
+             </div>
+             <div class="form-group form-check">
+               <input name="mantenermeLogeado" type="checkbox" class="form-check-input" id="check1">
+               <label class="form-check-label" for="check1">Mantenerme logueado</label>
              </div>
              <a class =colorAzul href="#">¿Olvidó su contraseña?</a>
              <button type="submit" class="btn btn-primary">Ingresar</button>

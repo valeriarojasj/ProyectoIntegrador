@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<link rel="stylesheet" href="css/footer.css">
     <footer>
       <ul>
         <li>Conocenos</li>

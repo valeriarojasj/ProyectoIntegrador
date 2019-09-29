@@ -1,21 +1,59 @@
 @import url("footer.css");
+
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-
 body{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+  background-color:#CBE2CA;
 }
-
+header nav.navbar{
+  background-color: #14A88D !important;
+}
+span.marca{
+  color:#F8970A;
+  font-family: 'Neucha', cursive;
+  font-size: 30px;
+}
+a.tipografiaHeader{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:#CBE2CA  !important;
+}
 div.dropdown-menu{
   padding: 10px;
 }
 nav.navbar{
   height: 15vh;
 }
+h1{
+color:#F8970A;
+text-align: center;
+font-family: 'Asap Condensed', sans-serif !important;
+}
+h2{
+color: #14A88D;
+}
+h3{
+
+}
+main{
+  overflow: hidden;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+h5{
+  font-size: 30px;
+  color:white !important;
+  font-family:'Asap Condensed', sans-serif !important;
+}
+p{
+  font-size: 20px;
+  color:white !important;
+  font-family:'Asap Condensed', sans-serif !important;
+}
+
 div.contenedor{
   height: 85vh;
 }
@@ -40,20 +78,14 @@ a.carousel-control-prev{
 a.carousel-control-next{
   width: 15%;
 }
-.marca{
-font-size: 20px;
-  font-family: 'Mansalva', cursive;
-  color:green;
-}
+
 .fotoActividades{
 width:70%;
 }
 .areaCaption{
-background-color: rgba(255,255,255,0.3);
+background-color: rgba(255,255,255,0.5);
 }
-h4{
-  color: white;
-}
+
 .carousel-inner{
 text-align: center;
 align-items: baseline;
@@ -64,7 +96,4 @@ width:50%;
 .Login{
 width: 280px;
 padding:10px;
-  }
-.colorAzul{
-color:#007bff;
   }

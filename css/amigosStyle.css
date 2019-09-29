@@ -5,9 +5,9 @@
 }
 
 .marca{
-font-size: 20px;
-font-family: 'Mansalva', cursive;
-color:green;
+  color:#F8970A;
+  font-family: 'Neucha', cursive;
+  font-size: 30px;
 }
 
 .textoIcono{
@@ -19,9 +19,11 @@ color:green;
 .icono{
   text-align: center;
 }
-
+header nav.navbar{
+  background-color: #14A88D !important;
+}
 header nav a{
-  color: green;
+  color: white;
 }
 
 div.dropdown-menu{
@@ -44,8 +46,7 @@ input{
 }
 
 body{
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
-
+  background-color:#CBE2CA;
 }
 .contenedorTodo{
   margin:0;
@@ -139,7 +140,7 @@ margin-bottom: 1%;
       }
 
       .fa-user-check{
-        color:green;
+        color:white;
       }
 
       .paddingArea{
@@ -160,8 +161,9 @@ margin-bottom: 1%;
         width: 100%;
       }
       h1{
-        font-size: 30px;
-        align-self: center;
+        color:#F8970A;
+        text-align: center;
+        font-family: 'Asap Condensed', sans-serif !important;
       }
 
 .

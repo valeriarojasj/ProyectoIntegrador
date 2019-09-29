@@ -1,9 +1,23 @@
 *{
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
-  color: white;
+  margin:0px;
+  padding: 0px;
+}
+body{
+background-color:#CBE2CA;
+}
+header nav.navbar{
+  background-color: #14A88D !important;
+}
+span.marca{
+  color:#F8970A;
+  font-family: 'Neucha', cursive;
+  font-size: 30px;
+}
+a.tipografiaHeader{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:#CBE2CA  !important;
 }
 footer{
   background-color: #14A88D !important;

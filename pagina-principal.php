@@ -14,6 +14,7 @@
   $imagen="";
   $video="";
   $docs="";
+  $textoPosteo="";
 
 
 

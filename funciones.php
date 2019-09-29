@@ -15,7 +15,7 @@ $textoPosteo="";
 */
 
 
-  function JsonToArray($unArchivoJson){
+function JsonToArray($unArchivoJson){
 
     $archivo=file_get_contents($unArchivoJson);
     $array=json_decode($archivo, true);
@@ -102,7 +102,9 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
         //$archivo=file_get_contents('usuarios.json');
         header('location:login.php');
       }
-  }
+  } setcookie("nombre", $email, time() + 60*60*24*7);
+
+  
 
 }//aca cierra la funcion registroUsuario
 

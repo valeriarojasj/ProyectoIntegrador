@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/dd0322cf66.js"></script>
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Chilanka|Mansalva&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed|Neucha&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/homeStyle.css">
   </head>
   <body>
@@ -21,19 +22,19 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="conocenos.php">Conócenos <span class="sr-only">(current)</span></a>
+              <a class="nav-link tipografiaHeader" href="conocenos.php">Conócenos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="FAQ.php">Preguntas Frecuentes</a>
+              <a class="nav-link tipografiaHeader" href="FAQ.php">Preguntas Frecuentes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contactanos.php">Contáctanos</a>
+              <a class="nav-link tipografiaHeader" href="contactanos.php">Contáctanos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="registro.php">Regístrate</a>
+              <a class="nav-link tipografiaHeader" href="registro.php">Regístrate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php">Iniciar Sesion</a>
+              <a class="nav-link tipografiaHeader" href="login.php">Iniciar Sesion</a>
             </li>
           </ul>
         </div>
@@ -44,6 +45,7 @@
       <div class="container-fluid contenedor">
         <div class="row filas">
           <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 columnas">
+            <h1>¡Únete a la comunidad de Sharityx!</h1>
             <div id="carouselExampleCaptions" class="carousel slide  " data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
