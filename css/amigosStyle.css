@@ -1,0 +1,167 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.marca{
+font-size: 20px;
+font-family: 'Mansalva', cursive;
+color:green;
+}
+
+.textoIcono{
+  font-family: helvetica;
+  font-size: 10px;
+  text-align: center;
+}
+
+.icono{
+  text-align: center;
+}
+
+header nav a{
+  color: green;
+}
+
+div.dropdown-menu{
+  padding: 10px;
+}
+
+nav.navbar a.navbar-brand img{
+  width: 58px;
+}
+
+div.navbar-collapse ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+
+body{
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+
+}
+.contenedorTodo{
+  margin:0;
+}
+
+nav{
+width: 100%;
+margin-bottom: 1%;
+}
+
+.divAvatar img{
+    border-radius: 50%;
+    height:6em;
+    border-color: 	rgb(153,153,153);
+    border-width: medium;
+    border-style: solid;
+
+  }
+
+  .divAvatar {
+      text-align: center;
+      color: white;
+    }
+
+    .seccionSaludo{
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0%;
+      padding-right: 0%;
+      color: black;
+      width: 100%;
+      margin-bottom: 1%;
+    }
+
+    .TusContactos{
+      width:100%;
+
+
+    }
+
+
+
+    .invitacionesTitulo{
+      color:white;
+      width:100%;
+    }
+
+    .contactosTitulo{
+      color:white;
+    }
+    .fondoAmarillo{
+      border: gray solid 1px;
+      background-color: white;
+    /*no agregar aca padding*/
+    }
+    .fondoBlanco{
+
+      color: black;
+
+      }
+
+    .fondoGris{
+      padding: 1%;
+    }
+      .fondoGris img{
+        border-radius: 50%;
+        width: 100%;
+        border-color: 	rgb(153,153,153);
+        border-width: medium;
+        border-style: solid;
+
+      }
+
+      .fondoVerde{
+      margin:0;
+      /*no agregar aca padding a la derecha*/
+
+      }
+
+      .fondorojo{
+      margin:0;
+      /*no agregar aca padding a la derecha*/
+
+      }
+
+      .fa-user-times{
+        color:red;
+      }
+
+      .fa-user-check{
+        color:green;
+      }
+
+      .paddingArea{
+
+
+      }
+
+      .paddingCentroA{
+
+      }
+
+      .paddingCentroB{
+
+      }
+      .cajaSaludo{
+
+        align-content: center;
+        width: 100%;
+      }
+      h1{
+        font-size: 30px;
+        align-self: center;
+      }
+
+.

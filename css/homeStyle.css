@@ -1,3 +1,4 @@
+@import url("footer.css");
 *{
   margin: 0;
   padding: 0;
@@ -12,53 +13,47 @@ body{
 div.dropdown-menu{
   padding: 10px;
 }
-
+nav.navbar{
+  height: 15vh;
+}
+div.contenedor{
+  height: 85vh;
+}
+div#carouselExampleCaptions{
+  width: 100%;
+}
 nav.navbar a.navbar-brand img{
   width: 58px;
 }
-
-div.navbar-collapse{
-
-}
-
 div.navbar-collapse ul.navbar-nav{
   width: 95%;
   display: flex;
   justify-content: flex-end;
 }
-
-div.navbar-collapse ul.navbar-nav li{
-
+div.carousel-inner{
+  display: inline;
+  width: 70%
 }
-
-nav a img{
-  width: 50px;
+a.carousel-control-prev{
+  width: 15%;
 }
-
-div.carousel-item div.img img{
-
-
+a.carousel-control-next{
+  width: 15%;
 }
-
-
 .marca{
-  font-size: 16px;
-  font-family: 'Chilanka', cursive;
+font-size: 20px;
+  font-family: 'Mansalva', cursive;
   color:green;
 }
-
 .fotoActividades{
 width:70%;
 }
-
 .areaCaption{
 background-color: rgba(255,255,255,0.3);
 }
-
 h4{
   color: white;
 }
-
 .carousel-inner{
 text-align: center;
 align-items: baseline;
@@ -66,12 +61,10 @@ margin-top: 2%;
 margin-bottom: 2%;
 width:50%;
   }
-
 .Login{
 width: 280px;
 padding:10px;
   }
-
 .colorAzul{
 color:#007bff;
   }

@@ -1,105 +1,162 @@
 *{
-  margin: 0;
+  margin:0;
   padding: 0;
   box-sizing: border-box;
 }
 
-header div.navegacion{
-  width: 100%;
-}
-header div.navegacion form.buscador{
-  float: left;
-}
-main.principal{
+
+body{
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+
 }
-div.miPerfil{
+
+
+
+.miPerfil{
   background-color: white;
   border-radius: 10px;
-  display: block;
-  float: left;
-  padding: 20px;
-  margin-right: 20px;
-  margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 0px;
   text-align: center;
+  padding: 20px;
 }
-div.miPerfil img{
-  width: 50%;
-  border-radius: 50%;
+.miPerfil img{
+    border-radius: 50%;
+    width: 80%;
+    border-color: 	rgb(153,153,153);
+    border-width: medium;
+    border-style: solid;
+  }
+
+.perfilPost img{
+      border-radius: 50%;
+      width: 15%;
+      border-color: 	rgb(153,153,153);
+      border-width: medium;
+      border-style: solid;
+
+    }
+
+.perfilPost{
+  padding:2%;
   align-items: center;
+}
+
+.nombrePosteo{
+  margin-left: 2%;
 }
 
 .miPerfil h5{
 text-align: left;
 }
+
 .miPerfil h4{
 text-align: left;
 font-weight: normal;
 font-size: 20px;
 }
+
 .novedades{
-  background-color: white;
   border-radius: 10px;
-  display: block;
-  float: left;
-  padding: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .novedad{
-  background-color: #ACDDFA;
-  border-width: 1px;
+  background-color: #ACDDFA; /*azul claro de posteos*/
   border-radius: 10px;
-  border-color: #9FD9F7;
-  padding: 10px;
+  border-color: 	rgb(153,153,153);
   margin-bottom: 10px;
-  overflow: hidden;
+  padding: 2%;
 }
-.imagenAmigo{
-width: 15%;
-border-radius: 50%;
-float: left;
-margin-bottom: 10px;
-border-color: black;
-border-width: 2px;
+.novedadYcomentarios{
+
 }
+
 h5{
-  display: block;
-  float: left;
 }
 .imagenPosteo{
   width: 100%;
   border-radius: 5px;
 }
+
 .publicidad{
   background-color: white;
   border-radius: 10px;
-  display: block;
-  float: left;
-  padding: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-.avisoPublicitario{
-  margin-bottom: 10px;
+  margin-top: 0px;
+  padding-right: 3%;
+  padding-left: 3%;
+  padding-top: 3%;
 }
 .publicidad img{
   width: 100%;
 }
-.marca{
-  font-size: 16px;
-  font-family: 'Chilanka', cursive;
-  color:green;
-}
-nav a img{
-  width: 50px;
+.avisoPublicitario{
+  padding-bottom: 3%;
 }
 
-div#navbarSupportedContent ul{
-  width: 100%;
+.marca{
+  font-size: 20px;
+  font-family: 'Mansalva', cursive;
+  color:green;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+header nav a{
+  color: green;
+}
+
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+
+
+body{
+
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+h2{
+  text-align: center;
+color: #4285F4;
+margin-top: 1%;
+}
+
+.textoIcono{
+  font-family: helvetica;
+  font-size: 10px;
+  text-align: center;
+}
+
+.icono{
+  text-align: center;
+}
+
+div.dropdown-menu{
+  padding: 10px;
+}
+
+nav.navbar a.navbar-brand img{
+  width: 58px;
+}
+
+div.navbar-collapse{
+}
+
+div.navbar-collapse ul.navbar-nav{
+  width: 95%;
   display: flex;
   justify-content: flex-end;
+}
+
+div.navbar-collapse ul.navbar-nav li{
+}
+
+header{
+  margin-bottom: 2%;
 }
 
 .textoIcono{
@@ -112,17 +169,132 @@ div#navbarSupportedContent ul{
   text-align: center;
 }
 div.novedades{
-  background-color: red;
+  background-color: white;
+  padding-right: 3%;
+  padding-left: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .fotoUpload input{
-  display:none;
+display:none;
 }
 
 .videoUpload input{
-  display:none;
+display:none;
 }
 
 .docUpload input{
-  display:none;
+display: none;
 }
+.textoPost{
+}
+.fa-camera{
+  font-size: 25px;
+
+}
+.fa-video{
+font-size: 25px;
+}
+.fa-paperclip{
+font-size: 25px;
+}
+.perfilPrincipal{
+  text-align: left;
+}
+
+.perfilContenido{
+  text-align: left;
+}
+
+.seccionIzquierda{
+
+  padding-right: 1%;
+  padding-left: 1%;
+
+}
+.seccionCentral{
+padding-left: 1%;
+  padding-right: 1%;
+}
+.seccionDerecha{
+padding-right: 1%;
+padding-left: 1%;
+
+}
+.posteos button{
+  margin-bottom: 3%;
+}
+
+.textoPost{
+
+}
+.divPosteo{
+  padding:1%;
+}
+
+.imgOvideo{
+  padding: 1%;
+}
+
+.acciones{
+  margin-left: 3%;
+  padding-bottom: 3%;
+
+}
+.textoAcciones{
+color: #4285F4; /*color de bootrstap primary*/
+}
+.iconosAcciones{
+color: #4285F4; /*color de bootrstap primary*/
+}
+
+.comentarioNuevo{
+  width:96%;
+  box-sizing: border-box;
+}
+.divComentarioNuevo{
+  text-align: center;
+}
+.divBotonEnviar{
+  text-align: left;
+  padding:2%;
+}
+
+h1{
+  color:black;
+  font-size: 30px;
+}
+
+.listaComentarios p{
+background-color: white;
+
+}
+.listaComentarios{
+  text-align: left;
+  box-sizing: border-box;
+}
+.divListaComentarios{
+
+  width=100%
+  box-sizing: border-box;
+  text-align: left;
+
+
+}
+.liComentarioLista{
+  margin-left: 2%;
+  margin-right: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: white;
+
+
+}
+.avatarComentarios{
+    border-radius: 50%;
+    width: 10%;
+    border-color: 	rgb(153,153,153);
+    border-width: medium;
+    border-style: solid;
+  }

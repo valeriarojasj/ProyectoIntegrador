@@ -1,63 +1,51 @@
-/*Desde aca son estilos de la barra de navegacion y de la pagina comunes para todas las paginas.*/
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
+.h1{
+color: rgb(255,255,255);
+text-align: center;
 }
-
-header nav a{
-  color: green;
-}
-
-input{
-  font-family: 'Helvetica', fontawesome;
-  font-weight: 900;
-}
-
 
 body{
-  background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
 
-h2{
-  text-align: center;
-color: white;
-margin-top: 1%;
+header{
+margin-bottom: 2%;
+}
+
+header nav a{
+color: green;
+}
+
+input{
+font-family: 'Helvetica', fontawesome;
+font-weight: 900;
 }
 
 .textoIcono{
-  font-family: helvetica;
-  font-size: 10px;
-  text-align: center;
+font-family: helvetica;
+font-size: 10px;
+text-align: center;
 }
 
 .icono{
-  text-align: center;
+text-align: center;
 }
 
 div.dropdown-menu{
-  padding: 10px;
+padding: 10px;
 }
 
-nav.navbar a.navbar-brand img{
-  width: 58px;
+.navbar-brand img{
+width: 58px;
 }
 
-div.navbar-collapse{
+ul.navbar-nav{
+width: 95%;
+display: flex;
+justify-content: flex-end;
 }
 
-div.navbar-collapse ul.navbar-nav{
-  width: 95%;
-  display: flex;
-  justify-content: flex-end;
+.marca{
+font-size: 20px;
+  font-family: 'Mansalva', cursive;
+  color:green;
 }
-
-div.navbar-collapse ul.navbar-nav li{
-}
-
-header{
-  margin-bottom: 2%;
-}
-/*Hasta aca son estilos de la barra de navegacion y de la pagina comunes para todas las paginas.*/

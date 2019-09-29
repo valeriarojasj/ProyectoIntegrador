@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body{
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+width:100%;
+}
+
 header nav a{
   color: green;
 }
@@ -19,12 +24,9 @@ input{
   padding: 3%;
   margin-top: 2%;
   border-radius: 10px;
-    }
+  }
 
-body{
-  background: rgb(2,0,36);
-  background: white;
-}
+
 
 h2{
   text-align: center;
@@ -43,18 +45,18 @@ h5{
   color: rgba(2,0,36,1);
 }
 
-.fondoRojo{
-
-}
 
 .fondoVerde{
 margin:0;
 padding-left: 2%;
+padding-right: 2%;
+
 }
 
 .fondoAmarillo{
   border: gray solid 1px;
   background-color: white;
+
 }
 
 .fondoGris{
@@ -62,8 +64,10 @@ padding-left: 2%;
 }
 
 .fondoBlanco{
-  background-color: white;
+
   color: black;
+  padding-left: 2%;
+  padding-right: 2%;
   }
 
 img{
@@ -72,33 +76,35 @@ img{
 
 .invitacionesTitulo{
   color:white;
-  /*display: none;*/
+  width:100%;
 }
 
 .contactosTitulo{
   color:white;
-    /*display: none;*/
 }
 
 .tituloSeccion{
-  color:white;
+  background-color: red;
+  padding-left: 2%;
+  padding-right: 2%;
+  width:100%;
 }
 
 .hombre{
 }
 
 nav a img{
-  width: 50px;
+  width: 58px;
 }
 
 .marca{
-  font-size: 16px;
-  font-family: 'Chilanka', cursive;
-  color:green;
+font-size: 20px;
+font-family: 'Mansalva', cursive;
+color:green;
 }
 
 .SeccionSuperior{
-  background-color: white;
+  background-color: blue;
   border-radius: 10px;
   font-family: Helvetica;
   font-size: 20px;
@@ -130,24 +136,25 @@ a{
   color:red;
 }
 
-div.dropdown-menu{
-  padding: 10px;
-}
 
-nav.navbar a.navbar-brand img{
-  width: 58px;
-}
-
-div.navbar-collapse{
-}
-
-div.navbar-collapse ul.navbar-nav{
+ul.navbar-nav{
   width: 95%;
   display: flex;
   justify-content: flex-end;
 }
 
-div.navbar-collapse ul.navbar-nav li{
+navbar-brand img{
+  width: 58px;
+}
+
+
+ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-nav li{
 }
 
 .formularioLogin{
@@ -182,8 +189,8 @@ padding-left: 3%;
 
 .fotoPerfil{
   border-radius: 150px;
-  width: 150px;
-  border-color: black;
+  width: 10%;
+  border-color: rgba(0,0,0,0.7)
   border-width: medium;
   border-style: solid;
 }
@@ -193,11 +200,9 @@ padding-left: 3%;
   margin-top: 2%;
   margin-left: 0;
   margin-right: 0;
-  background-color: white;
+  background-color: red;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding-left: 3%;
-  padding-right:3%;
   padding-top:1%;
   padding-bottom:1%;
   color: black;
@@ -208,6 +213,7 @@ padding-left: 3%;
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
+  text-align: center;
 }
 
 .fotoInv{
@@ -215,6 +221,14 @@ padding-left: 3%;
   align-self:center;
 
 }
+
+.areaTitulo{
+  align-self: center;
+
+}
+
+
+
 
 /*@media only screen and (max-width: 600px) {
   .invitacionesTitulo{

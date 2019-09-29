@@ -17,7 +17,7 @@ input{
 
 
 body{
-  background: rgb(2,0,36);
+
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
 }
 
@@ -58,18 +58,28 @@ div.navbar-collapse ul.navbar-nav li{
 }
 
 header{
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 .cardTexto{
   text-decoration: none;
   color: black;
   font-style: 'Helvetica',fontawesome;
   font-weight: 400;
-  te
+
 }
 
 .cardButton{
-  margin-top: 5%;
+  margin-top: 2%;
 
 }
+
+h1{color:white;}
+
+.marca{
+  font-size: 20px;
+  font-family: 'Mansalva', cursive;
+  color:green;
+}
+
+
 /*Hasta aca son estilos de la barra de navegacion y de la pagina comunes para todas las paginas.*/

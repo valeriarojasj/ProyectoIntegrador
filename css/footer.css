@@ -2,13 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: sans-serif;
   color: white;
 }
 footer{
+  background-color: yellow;
   background-color: black;
-  
 }
+
 footer ul{
   display: inline-block;
 }
@@ -18,4 +19,11 @@ footer ul li{
 }
 footer p{
   display: inline-block;
+}
+@media only screen and (min-device-width:715px){
+
+  footer{
+    background-color: blue;
+    height: 40%;
+    }
 }

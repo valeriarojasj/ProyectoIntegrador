@@ -1,7 +1,12 @@
 nav a img{width: 50px;}
 
 .marca{
-  font-size: 16px;
-  font-family: 'Chilanka', cursive;
+  font-size: 20px;
+  font-family: 'Mansalva', cursive;
   color:green;
+}
+
+.Login{
+  width: 280px;
+  padding:10px;
 }
