@@ -109,7 +109,7 @@ if($_SESSION){
           <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right ">
             <a class="dropdown-item" href="perfil.php">Ver Mi perfil</a>
             <a class="dropdown-item" href="#">Editar Mi Perfil</a>
-            <a class="dropdown-item" href="home.php">Cerrar Sesión</a>
+            <a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a>
           </div>
         </li>
 

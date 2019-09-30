@@ -1,5 +1,8 @@
 <?php
 require_once('funciones/autoload.php');
+if(elUsuarioEstaLogueado()){
+  header('location:pagina-principal.php');exit;
+}
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

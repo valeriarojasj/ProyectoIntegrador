@@ -34,7 +34,9 @@ function logIn($email,$password){
     header('location:pagina-principal.php');exit;
     }
   }
-  return "Usuario y/o contraseña inválido";
+
+
+  return $errorLogin="Usuario y contraseña invalido";
 }//aca cierra la funcion LogIn
 
 function logOut(){
@@ -42,6 +44,6 @@ function logOut(){
   if(isset($_COOKIE["email"])){
     setcookie("name", $email, time() - 1);
   }
-  header('location:login.php');
+  header('location:home.php');
 }
  ?>
