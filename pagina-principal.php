@@ -2,33 +2,52 @@
 <?php
 
   require_once('funciones/autoload.php');
+  $email="";
+  $nombre="";
+  $apellido="";
+  $avatar="";
+  $misPosteos=[];
+  $destinoImagen="";
+  $destinoVideo="";
+  $destinoDoc="";
+  $textoPosteo="";
+  $errorImagen="";
+  $errorVideo="";
+  $errorDoc="";
+
+if($_SESSION){
   $email=$_SESSION["email"];
   $nombre=$_SESSION["nombre"];
   $apellido=$_SESSION["apellido"];
   $avatar=$_SESSION["avatar"];
-  
-  $imagen="";
-  $video="";
-  $docs="";
-  $textoPosteo="";
-  $errorFoto="";
-  $errorVideo="";
-  $errorDoc="";
+  $misPosteos = traerMisPosteos($email);
+
+}
+
+
 
 
 
   if($_POST){
-  if(isset($_POST['textoPosteo']) && isset($_FILES['inputImagen'])&&isset($_FILES['inputVideo']) && isset($_FILES['inputDoc'])&&isset($_POST['areaInteres']) && isset($_POST['tipoPosteo'])){
-CargarArchivoPosteo($_POST['textoPosteo'],$_FILES['inputImagen'],$_FILES['inputVideo'],$_FILES['inputDoc'],$_POST['areaInteres'],$_POST['tipoPosteo']);
-  }}
-
-
-
-
-
-
-
-
+    if(isset($_POST['textoPosteo']) &&
+    isset($_FILES['inputImagen'])&&
+    isset($_FILES['inputVideo']) &&
+    isset($_FILES['inputDoc'])&&
+    isset($_POST['areaInteres']) &&
+    isset($_POST['tipoPosteo'])){
+      CargarArchivoPosteo($_FILES['inputImagen']['error'],
+                          $_FILES['inputVideo']['error'],
+                          $_FILES['inputDoc']['error'],
+                          $_FILES['inputImagen']['name'],
+                          $_FILES['inputVideo']['name'],
+                          $_FILES['inputDoc']['name'],
+                          $_FILES['inputImagen']['tmp_name'],
+                          $_FILES['inputVideo']['tmp_name'],
+                          $_FILES['inputDoc']['tmp_name'],
+                          $_POST['textoPosteo'],
+                          $_POST['areaInteres'],
+                          $_POST['tipoPosteo']);
+        }}
 
 ?>
 <!DOCTYPE html>
@@ -231,9 +250,9 @@ CargarArchivoPosteo($_POST['textoPosteo'],$_FILES['inputImagen'],$_FILES['inputV
       </ul>
   </div> <!--cierra el div de la lista de botones-->
 
-      <span><?=$errorFoto ." "?> </span>
+      <span><?=$errorImagen." "?> </span>
       <span><?=$errorVideo." "?></span>
-      <span><?=$errorDoc . " "?></span>
+      <span><?=$errorDoc. " "?></span>
 </div> <!--cierra el div del body del modal-->
 
 <div class="modal-footer">
@@ -247,23 +266,29 @@ CargarArchivoPosteo($_POST['textoPosteo'],$_FILES['inputImagen'],$_FILES['inputV
 </div><!--cierra el modal-->
 </div>  <!--cierra posteos-->
 
+<?php
+foreach ($misPosteos as $miPosteo) {
 
+   ?>
 <div class="novedadYcomentarios">
 <div class="novedad "><!--comienza un posteo-->
   <div class=" perfilPost media">
   <img class="avatarPosteo" src="<?=$avatar?>" alt="">
   <div class="media-body nombrePosteo">
     <h5 ><?=$nombre . " " .$apellido ?></h5>
+
     </div>
   </div>
 
 
 <div class="imgOvideo">
- <img src="<?=$imagen?>" class="imagenPosteo" alt="">
- <media src="<?=$video?>" class="videoPosteo" alt="">
+ <img src="<?=$miPosteo["imagen"]?>" class="imagenPosteo" alt="">
+ <media src="<?=$miPosteo["video"]?>" class="videoPosteo" alt="">
+   <span><?=$miPosteo["documento"]?></span>
+
    </div>
    <div class="mb-3 divPosteo">
-     <p><?=$textoPosteo?></p>
+     <p><?=$miPosteo["textoPosteo"]?></p>
      <div class="invalid-feedback">
        <!--Aca puede ir el mensaje de error si esta vacio-->
      </div>     <!--cierra el div del  mensaje de error del text area-->
@@ -353,7 +378,7 @@ CargarArchivoPosteo($_POST['textoPosteo'],$_FILES['inputImagen'],$_FILES['inputV
 
 
 </div> <!--CIERRA NOVEDADES Y COMENTARIOS-->
-
+<?php  }?>
 
           <!--noticias-->
           <h2>Ultimas novedades</h2>

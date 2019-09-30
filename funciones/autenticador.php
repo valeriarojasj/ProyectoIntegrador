@@ -18,7 +18,7 @@ function elUsuarioEstaLogueado(){
 
 }
 
-function LogIn($email,$password){
+function logIn($email,$password){
   $usuarios=jsonToArray("usuarios.json");
   foreach($usuarios as $usuarioGuardado){
     if($usuarioGuardado["email"]==$email&&password_verify($password, $usuarioGuardado["password"])){

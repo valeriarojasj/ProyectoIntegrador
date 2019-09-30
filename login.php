@@ -1,6 +1,8 @@
 <?php
 
 require_once('funciones/autoload.php');
+
+
 $errorLogin="";
 $password="";
 $email="";
@@ -12,8 +14,8 @@ if($_COOKIE){
 }
 if($_POST){
   if(isset($_POST["email"]) && isset($_POST["password"])){
-    $errorLogin=logIn($_POST["email"],$_POST["password"]);
-    $email=$_POST["email"];
+    logIn($_POST["email"],$_POST["password"]);
+  
   }
 }
  ?>

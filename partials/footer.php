@@ -2,7 +2,7 @@
 <head>
   <link rel="stylesheet" href="../css/footer.css">
 </head>
-
+<
     <footer>
       <ul>
         <a href="#"></a>

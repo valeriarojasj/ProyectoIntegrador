@@ -35,7 +35,7 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
   $errorPassword="";
   $errorConfirm="";
   $id=0;
-  $idPosteo="";
+
   //$errorArchivo="";
 
   if(strlen($nombre)==0){
@@ -115,48 +115,52 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
 
 
 
-function CargarArchivoPosteo($textoPosteo,$imagen,$video,$docs,$areaInteres,$tipoPosteo){
-$idPosteo=0;
-  if($_POST){
-    if(isset($_POST["textoPosteo"])){
-    $textoPosteo=$_POST["textoPosteo"];}
-  }
-if($_FILES){
-    if($_FILES["inputImagen"]["error"] != 0){
+function CargarArchivoPosteo($errorImagen, $errorVideo, $errorDoc,$nombreImagen,$nombreVideo,$nombreDoc, $imagenTmpName,$videoTmpName,$docTmpName, $textoPosteo,$areaInteres,$tipoPosteo){
+
+  $idPosteo=0;
+  $destinoImagen="";
+  $destinoVideo="";
+  $destinoDoc="";
+
+
+    if($errorImagen != 0){
       "Error al cargar la imagen";
     }else{
-      $ext=pathinfo($_FILES["inputImagen"]["name"],PATHINFO_EXTENSION);
+      $ext=pathinfo($nombreImagen,PATHINFO_EXTENSION);
       if($ext!="jpg" && $ext!="jpeg" && $ext!="png"){
       $errorFoto="Solo se permiten fotos en formato jpg, jpeg o png.<br>";
-    }else{$imagen="uploads/imagen.$ext";
-      move_uploaded_file($_FILES["inputImagen"]["tmp_name"],$imagen);}
+    }else{
+      $destinoImagen="uploads/".md5($nombreImagen).".".$ext;
+      move_uploaded_file($imagenTmpName,$destinoImagen);}
     }
-  if($_FILES["inputVideo"]["error"] != 0){
+  if($errorVideo != 0){
     "Error al cargar el Video";
     }else{
-      $ext=pathinfo($_FILES["inputVideo"]["name"],PATHINFO_EXTENSION);
+      $ext=pathinfo($nombreVideo,PATHINFO_EXTENSION);
       if($ext!="mpg" && $ext!="mov" && $ext!="mpeg" && $ext!="mp4" && $ext!="avi" && $ext!="mpeg-4"){
       $errorVideo="Solo se permiten videos en formato mpg, mov, mpeg, mp4, avi y mpeg-4.<br>";
-  }else{$video="uploads/video.$ext";
-    move_uploaded_file($_FILES["inputVideo"]["tmp_name"], $video);}
+  }else{$destinoVideo="uploads/".md5($nombreVideo).".".$ext;
+    move_uploaded_file($videoTmpName, $destinoVideo);}
 
 }
-  if($_FILES["inputDoc"]["error"] != 0){
+  if($errorDoc != 0){
     "Error al cargar el documento";
   }else{
-    $ext=pathinfo($_FILES["inputDoc"]["name"],PATHINFO_EXTENSION);
+    $ext=pathinfo($nombreDoc,PATHINFO_EXTENSION);
     if($ext!="doc" && $ext!="docx" && $ext!="pdf"){
       $errorDoc="Solo se permiten documentos en formato doc, docx y pdf.<br>";
   }else{
-    $docs="uploads/docs.$ext";
-    move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
+    $destinoDoc="uploads/".md5($nombreDoc).".".$ext;
+    move_uploaded_file($docTmpName,$destinoDoc);
   }
 
 }
 
 
 if(file_exists("posteos.json")){
+
   $arrayPosteos=jsonToArray("posteos.json");
+  if(!empty($arrayPosteos)){
   foreach($arrayPosteos as $arrayPosteo){
 
     if($arrayPosteo["idPosteo"]>$idPosteo){
@@ -164,14 +168,15 @@ if(file_exists("posteos.json")){
     }
   }
   $idPosteo++;
+}else{$idPosteo=1;}
 }
 
 $arrayPosteo=[];
 $arrayPosteo["email"]=$_SESSION["email"];
 $arrayPosteo["idPosteo"]=$idPosteo;
-$arrayPosteo["documento"]=$docs;
-$arrayPosteo["imagen"]=$imagen;
-$arrayPosteo["video"]=$video;
+$arrayPosteo["documento"]=$destinoDoc;
+$arrayPosteo["imagen"]=$destinoImagen;
+$arrayPosteo["video"]=$destinoVideo;
 $arrayPosteo["textoPosteo"]=$textoPosteo;
 $arrayPosteo["tipoPosteo"]=$tipoPosteo;
 $arrayPosteo["areaInteres"]=$areaInteres;
@@ -180,8 +185,20 @@ $jsonPosteos=json_encode($arrayPosteos);
 
 file_put_contents("posteos.json",$jsonPosteos);
 
+}//aca cierra la funcion CargarArchivoPosteo
 
-}}//aca cierra la funcion CargarArchivoPosteo
+function traerMisPosteos($email){
+$jsonPosteos=file_get_contents("posteos.json");
+$arrayPosteos=json_decode($jsonPosteos,true);
+
+  foreach ($arrayPosteos as $arrayPosteo) {
+    if($arrayPosteo["email"]==$email){
+      $misPosteos[]=$arrayPosteo;
+    }
+  }
+  return $misPosteos;
+}
+
 
 
 
