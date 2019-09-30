@@ -14,6 +14,7 @@
   $imagen="";
   $video="";
   $docs="";
+  $textoPosteo="";
 
 
 
@@ -76,6 +77,91 @@ if($_FILES){
     $apellido=$usuarioActual["apellido"];
     $avatar=$usuarioActual["avatar"];
   }
+
+
+    /*function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
+    $imagen="img/avatar-man.png";
+    $usuario=[];
+    $ext='';
+    $nombreArchivo="";
+    $errorNombre="";
+    $errorApellido="";
+    $errorEmail="";
+    $errorPassword="";
+    $errorConfirm="";
+    //$errorArchivo="";
+
+    if(strlen($nombre)==0){
+      $errorNombre="Ingrese su nombre";
+    }
+
+    if(strlen($apellido)==0){
+      $errorApellido="Ingrese su apellido";
+    }
+
+    if(strlen($email)==0){
+      $errorEmail="Ingrese su email";
+    }else if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)==false){
+      $errorEmail="Ingrese un email valido";
+      $email="";
+    }
+
+    if(strlen($pass)<8){
+      $errorPassword="La contraseña debe tener por lo menos 8 caracteres";
+    }
+
+    if($pass!=$confirm){
+      $errorConfirm="Las contraseñas no coinciden";
+    }
+    if($errorNombre=="" && $errorApellido==""&&$errorPassword==""&&$errorConfirm==""&&$errorEmail==""){
+
+      if($avatar!=null){
+        if($avatar['error']==0){
+
+          $ext=pathinfo($avatar['name'],PATHINFO_EXTENSION);
+          if($ext!='jpg'&&$ext!='jpeg'&&$ext!='png'){
+            $errorArchivo="Formato invalido.Solo se permiten archivos jpg, jpeg o png";
+          }else{
+            $nombreArchivo=$email . ".".$ext;
+            move_uploaded_file($avatar['tmp_name'],'img/'.$nombreArchivo);
+            $imagen='img/'.$nombreArchivo;
+          }
+
+        }else{
+          $errorArchivo="Error al cargar el archivo";
+        }
+      }
+
+      $usuario['avatar']=$imagen;
+      $usuario["nombre"]=$nombre;
+      $usuario["apellido"]=$apellido;
+      $usuario["email"]=$email;
+      $usuario["password"]=password_hash($pass,PASSWORD_DEFAULT);
+
+      if(file_exists("usuarios.json")){
+        $usuarios=jsonToArray("usuarios.json");
+
+        foreach($usuarios as $usuarioGuardado){
+          if($usuarioGuardado["email"]==$usuario["email"]){
+            $errorEmail="El email ya existe";
+          }
+          if($usuarioGuardado["id"]>$id) {
+            $id = $usuarioGuardado["id"];
+          }
+        }
+      }
+        if(empty($errorEmail)){
+          $id++;
+          $usuario['id']=$id;
+          $usuarios[]=$usuario;
+          $jsonUsuarios=json_encode($usuarios);
+          file_put_contents("usuarios.json",$jsonUsuarios);
+          //$archivo=file_get_contents('usuarios.json');
+          header('location:login.php');
+        }
+    }
+
+  }//aca cierra la funcion registroUsuario*/
 
 ?>
 <!DOCTYPE html>

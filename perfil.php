@@ -16,12 +16,13 @@ echo "Bienvenido";
   </head>
   <body>
     <form action="logout.php" method="POST"
-    
+
   </body>
 </html>
 */
 
   require_once('funciones.php');
+  
   $email="";
   $nombre="";
   $apellido="";
