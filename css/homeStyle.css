@@ -1,62 +1,89 @@
+@import url("footer.css");
+
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-
 body{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,68,142,1) 35%, rgba(0,212,255,1) 100%);
+  background-color:#CBE2CA;
 }
-
+header nav.navbar{
+  background-color: #14A88D !important;
+}
+span.marca{
+  color:#F8970A;
+  font-family: 'Neucha', cursive;
+  font-size: 30px;
+}
+a.tipografiaHeader{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:#CBE2CA  !important;
+}
 div.dropdown-menu{
   padding: 10px;
 }
+nav.navbar{
+  height: 15vh;
+}
+h1{
+color:#F8970A;
+text-align: center;
+font-family: 'Asap Condensed', sans-serif !important;
+}
+h2{
+color: #14A88D;
+}
+h3{
 
+}
+main{
+  overflow: hidden;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+h5{
+  font-size: 30px;
+  color:white !important;
+  font-family:'Asap Condensed', sans-serif !important;
+}
+p{
+  font-size: 20px;
+  color:white !important;
+  font-family:'Asap Condensed', sans-serif !important;
+}
+
+div.contenedor{
+  height: 85vh;
+}
+div#carouselExampleCaptions{
+  width: 100%;
+}
 nav.navbar a.navbar-brand img{
   width: 58px;
 }
-
-div.navbar-collapse{
-
-}
-
 div.navbar-collapse ul.navbar-nav{
   width: 95%;
   display: flex;
   justify-content: flex-end;
 }
-
-div.navbar-collapse ul.navbar-nav li{
-
+div.carousel-inner{
+  display: inline;
+  width: 70%
 }
-
-nav a img{
-  width: 50px;
+a.carousel-control-prev{
+  width: 15%;
 }
-
-div.carousel-item div.img img{
-
-
-}
-
-
-.marca{
-font-size: 20px;
-  font-family: 'Mansalva', cursive;
-  color:green;
+a.carousel-control-next{
+  width: 15%;
 }
 
 .fotoActividades{
 width:70%;
 }
-
 .areaCaption{
-background-color: rgba(255,255,255,0.3);
-}
-
-h4{
-  color: white;
+background-color: rgba(255,255,255,0.5);
 }
 
 .carousel-inner{
@@ -66,12 +93,7 @@ margin-top: 2%;
 margin-bottom: 2%;
 width:50%;
   }
-
 .Login{
-    width: 280px;
-    padding:10px;
-}
-
-.colorAzul{
-color:#007bff;
+width: 280px;
+padding:10px;
   }

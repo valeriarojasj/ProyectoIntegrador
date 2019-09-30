@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="css/footer.css">
-  </head>
-  <body>
+<link rel="stylesheet" href="css/footer.css">
     <footer>
       <ul>
         <li>Conocenos</li>
@@ -15,7 +9,5 @@
       </ul>
         <p>Sharityx © 2019.</p>
 
-      
+
     </footer>
-  </body>
-</html>
