@@ -1,20 +1,14 @@
 <?php
-
 require_once('funciones/autoload.php');
 $errorLogin="";
 $password="";
 $email="";
-if($_COOKIE){
-  if(isset ($_COOKIE["mantenermeLogeado"])&& $_COOKIE["mantenermeLogeado"] == "on"){
-  setcookie("email", $email, time()+30);
+if(isset($_POST["mantenermeLogeado"])){
+  header('location:pagina-principal.php');
 }
-
-}
-if($_POST){
-  if(isset($_POST["email"]) && isset($_POST["password"])){
-    $errorLogin=logIn($_POST["email"],$_POST["password"]);
-    $email=$_POST["email"];
-  }
+if(isset($_POST["email"]) && isset($_POST["password"])){
+  $errorLogin=logIn($_POST["email"],$_POST["password"]);
+  $email=$_POST["email"];
 }
  ?>
 
@@ -62,26 +56,18 @@ if($_POST){
 
 
      <div class="container">
-       <h2>Te damos la bienvenida, para continuar debes ingresar tu email y contraseña</h2>
+       <h2>En breve te enviaremos un email para renovar tu contraseña</h2>
        <form method='post' action='login.php'>
          <div class="row">
            <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-10  mx-auto fondoFormulario">
              <div class="form-group">
                <label for="email">Email</label>
-               <input name="email" type="email" class="form-control" placeholder="Tu email" value="<?=$email?>" required>
+               <input name="email" type="email" class="form-control" placeholder="Tu email" required>
                <small id="email" class="form-text text-muted"></small>
              </div>
-             <div class="form-group">
-               <label for="inputPassword1">Contraseña</label>
-               <input  name="password" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" value="<?=$password?>" required>
-               <small id="passwordHelp" class="form-text text-muted"><?=$errorLogin?></small>
-             </div>
-             <div class="form-group form-check">
-               <input name="mantenermeLogeado" type="checkbox" class="form-check-input" id="check1">
-               <label class="form-check-label" for="check1">Mantenerme logueado</label>
-             </div>
-             <a class =colorAzul href="olvidePassword.php">¿Olvidó su contraseña?</a>
-             <button type="submit" class="btn btn-primary">Ingresar</button>
+
+<a href="#"></a>
+             <button type="submit" class="btn btn-primary">Enviar</button>
            </div>
          </div>
        </form>

@@ -1,6 +1,5 @@
 <?php
-
-require_once("funciones.php");
+require_once('funciones/autoload.php');
 $usuarios=JsonToArray("usuarios.json");
  ?>
 

@@ -1,167 +1,34 @@
 
 <?php
-  require_once('funciones.php');
-  if($_POST){
-  LogIn($_POST['email'],$_POST['password']);}
 
-  $email="";
-  $nombre="";
-  $apellido="";
-  $avatar="";
-  $errorFoto="";
-  $errorVideo="";
-  $errorDoc="";
+  require_once('funciones/autoload.php');
+  $email=$_SESSION["email"];
+  $nombre=$_SESSION["nombre"];
+  $apellido=$_SESSION["apellido"];
+  $avatar=$_SESSION["avatar"];
+  
   $imagen="";
   $video="";
   $docs="";
   $textoPosteo="";
+  $errorFoto="";
+  $errorVideo="";
+  $errorDoc="";
 
 
 
-if($_POST){
-  if(isset($_POST["textoPosteo"])){
-  $textoPosteo=$_POST["textoPosteo"];}
-}
-if($_FILES){
-    if($_FILES["inputImagen"]["error"] != 0){
-      "Error al cargar la imagen";
-    }else{
-      $ext=pathinfo($_FILES["inputImagen"]["name"],PATHINFO_EXTENSION);
-      if($ext!="jpg" && $ext!="jpeg" && $ext!="png"){
-      $errorFoto="Solo se permiten fotos en formato jpg, jpeg o png.<br>";
-    }else{$imagen="uploads/imagen.$ext";
-      move_uploaded_file($_FILES["inputImagen"]["tmp_name"],$imagen);}
-    }
-  if($_FILES["inputVideo"]["error"] != 0){
-    "Error al cargar el Video";
-    }else{
-      $ext=pathinfo($_FILES["inputVideo"]["name"],PATHINFO_EXTENSION);
-      if($ext!="mpg" && $ext!="mov" && $ext!="mpeg" && $ext!="mp4" && $ext!="avi" && $ext!="mpeg-4"){
-      $errorVideo="Solo se permiten videos en formato mpg, mov, mpeg, mp4, avi y mpeg-4.<br>";
-  }else{$video="uploads/video.$ext";
-    move_uploaded_file($_FILES["inputVideo"]["tmp_name"], $video);}
-
-}
-  if($_FILES["inputDoc"]["error"] != 0){
-    "Error al cargar el documento";
-  }else{
-    $ext=pathinfo($_FILES["inputDoc"]["name"],PATHINFO_EXTENSION);
-    if($ext!="doc" && $ext!="docx" && $ext!="pdf"){
-      $errorDoc="Solo se permiten documentos en formato doc, docx y pdf.<br>";
-  }else{
-    $docs="uploads/docs.$ext";
-    move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
-  }
-}
+  if($_POST){
+  if(isset($_POST['textoPosteo']) && isset($_FILES['inputImagen'])&&isset($_FILES['inputVideo']) && isset($_FILES['inputDoc'])&&isset($_POST['areaInteres']) && isset($_POST['tipoPosteo'])){
+CargarArchivoPosteo($_POST['textoPosteo'],$_FILES['inputImagen'],$_FILES['inputVideo'],$_FILES['inputDoc'],$_POST['areaInteres'],$_POST['tipoPosteo']);
+  }}
 
 
-}
-
-  if($_GET){
-
-    $email=$_GET["email"];
 
 
-    $usuarios=jsonToArray("usuarios.json");
-
-    foreach ($usuarios as $usuarioGuardado) {
-
-      if($usuarioGuardado["email"]==$email){
-        $usuarioActual=$usuarioGuardado;
 
 
-      }
-
-    }
-    $nombre=$usuarioActual["nombre"];
-    $apellido=$usuarioActual["apellido"];
-    $avatar=$usuarioActual["avatar"];
-  }
 
 
-    /*function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
-    $imagen="img/avatar-man.png";
-    $usuario=[];
-    $ext='';
-    $nombreArchivo="";
-    $errorNombre="";
-    $errorApellido="";
-    $errorEmail="";
-    $errorPassword="";
-    $errorConfirm="";
-    //$errorArchivo="";
-
-    if(strlen($nombre)==0){
-      $errorNombre="Ingrese su nombre";
-    }
-
-    if(strlen($apellido)==0){
-      $errorApellido="Ingrese su apellido";
-    }
-
-    if(strlen($email)==0){
-      $errorEmail="Ingrese su email";
-    }else if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)==false){
-      $errorEmail="Ingrese un email valido";
-      $email="";
-    }
-
-    if(strlen($pass)<8){
-      $errorPassword="La contraseña debe tener por lo menos 8 caracteres";
-    }
-
-    if($pass!=$confirm){
-      $errorConfirm="Las contraseñas no coinciden";
-    }
-    if($errorNombre=="" && $errorApellido==""&&$errorPassword==""&&$errorConfirm==""&&$errorEmail==""){
-
-      if($avatar!=null){
-        if($avatar['error']==0){
-
-          $ext=pathinfo($avatar['name'],PATHINFO_EXTENSION);
-          if($ext!='jpg'&&$ext!='jpeg'&&$ext!='png'){
-            $errorArchivo="Formato invalido.Solo se permiten archivos jpg, jpeg o png";
-          }else{
-            $nombreArchivo=$email . ".".$ext;
-            move_uploaded_file($avatar['tmp_name'],'img/'.$nombreArchivo);
-            $imagen='img/'.$nombreArchivo;
-          }
-
-        }else{
-          $errorArchivo="Error al cargar el archivo";
-        }
-      }
-
-      $usuario['avatar']=$imagen;
-      $usuario["nombre"]=$nombre;
-      $usuario["apellido"]=$apellido;
-      $usuario["email"]=$email;
-      $usuario["password"]=password_hash($pass,PASSWORD_DEFAULT);
-
-      if(file_exists("usuarios.json")){
-        $usuarios=jsonToArray("usuarios.json");
-
-        foreach($usuarios as $usuarioGuardado){
-          if($usuarioGuardado["email"]==$usuario["email"]){
-            $errorEmail="El email ya existe";
-          }
-          if($usuarioGuardado["id"]>$id) {
-            $id = $usuarioGuardado["id"];
-          }
-        }
-      }
-        if(empty($errorEmail)){
-          $id++;
-          $usuario['id']=$id;
-          $usuarios[]=$usuario;
-          $jsonUsuarios=json_encode($usuarios);
-          file_put_contents("usuarios.json",$jsonUsuarios);
-          //$archivo=file_get_contents('usuarios.json');
-          header('location:login.php');
-        }
-    }
-
-  }//aca cierra la funcion registroUsuario*/
 
 ?>
 <!DOCTYPE html>
@@ -316,20 +183,20 @@ if($_FILES){
                       <div class="form-group">
                         <select class="custom-select" name="areaInteres">
                           <option value="">Area de interés</option>
-                          <option value="1">Salud</option>
-                          <option value="2">Educación</option>
-                          <option value="3">Deporte</option>
-                          <option value="4">Medio Ambiente</option>
+                          <option value="Salud">Salud</option>
+                          <option value="Email">Educación</option>
+                          <option value="Detalles">Deporte</option>
+                          <option value="MedioAmbiente">Medio Ambiente</option>
                         </select>
                       </div>     <!--cierra el div de las opciones de areas de interes-->
 
                     <div class="form-group">
                       <select class="custom-select" name="tipoPosteo" >
                         <option value="">Tipo de posteo</option>
-                        <option value="1">Donación</option>
-                        <option value="2">Evento Próximo</option>
-                        <option value="3">Evento Pasado</option>
-                        <option value="4">Otros</option>
+                        <option value="Donacion">Donación</option>
+                        <option value="EventoProximo">Evento Próximo</option>
+                        <option value="EventoPasado">Evento Pasado</option>
+                        <option value="Otros">Otros</option>
                         </select>
                     </div> <!--cierra el div de las opciones de tipo de posteo-->
 

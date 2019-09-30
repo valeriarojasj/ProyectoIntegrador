@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+require_once('funciones/autoload.php');
 /*if(!isset($_SESSION["email"])){
 header('location:login.php');
 }
@@ -21,12 +21,12 @@ echo "Bienvenido";
 </html>
 */
 
-  require_once('funciones.php');
-  
-  $email="";
-  $nombre="";
-  $apellido="";
-  $avatar="";
+
+
+  $email=$_SESSION["email"];
+  $nombre=$_SESSION["nombre"];
+  $apellido=$_SESSION["apellido"];
+  $avatar=$_SESSION["avatar"];
 
   if($_GET){
 

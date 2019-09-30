@@ -1,3 +1,6 @@
+<?php
+require_once('funciones/autoload.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -90,7 +93,7 @@
     </main>
 
     <?php
-    include_once('footer.php');
+    include_once('partials/footer.php');
     ?>
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

@@ -16,9 +16,13 @@ footer ul{
 footer ul li{
   list-style-type: none;
   margin-right: 10px;
+  color: white;
+  font-family:sans-serif;
+  font-size: 15px;
 }
 footer p{
-  display: inline-block;
+
+  float: right;
 }
 @media only screen and (min-device-width:715px){
 

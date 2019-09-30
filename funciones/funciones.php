@@ -1,7 +1,9 @@
 <?php
+
 $usuarios=[];
 $jsonUsuarios=NULL;
 $id=0;
+
 
 /*$errorLogIn="";
 $avatar="";
@@ -32,6 +34,8 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
   $errorEmail="";
   $errorPassword="";
   $errorConfirm="";
+  $id=0;
+  $idPosteo="";
   //$errorArchivo="";
 
   if(strlen($nombre)==0){
@@ -99,64 +103,24 @@ function RegistroUsuario($nombre,$apellido,$email,$pass,$confirm,$avatar){
         $usuarios[]=$usuario;
         $jsonUsuarios=json_encode($usuarios);
         file_put_contents("usuarios.json",$jsonUsuarios);
+
         //$archivo=file_get_contents('usuarios.json');
         header('location:login.php');
       }
-  } setcookie("nombre", $email, time() + 60*60*24*7);
+  }
 
-  
+
 
 }//aca cierra la funcion registroUsuario
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function LogIn($email,$password){
-  $usuarios=jsonToArray("usuarios.json");
-  foreach($usuarios as $usuarioGuardado){
-    if($usuarioGuardado["email"]==$email&&password_verify($password, $usuarioGuardado["password"])){
-    header('location:pagina-principal.php');exit;
-    }
+function CargarArchivoPosteo($textoPosteo,$imagen,$video,$docs,$areaInteres,$tipoPosteo){
+$idPosteo=0;
+  if($_POST){
+    if(isset($_POST["textoPosteo"])){
+    $textoPosteo=$_POST["textoPosteo"];}
   }
-  return "Usuario y/o contraseña invalido";
-}//aca cierra la funcion LogIn
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function CargarArchivoPosteo($errorFoto,$errorDoc,$errorVideo){
 if($_FILES){
     if($_FILES["inputImagen"]["error"] != 0){
       "Error al cargar la imagen";
@@ -187,16 +151,38 @@ if($_FILES){
     $docs="uploads/docs.$ext";
     move_uploaded_file($_FILES["inputDoc"]["tmp_name"],$docs);
   }
+
 }
+
+
+if(file_exists("posteos.json")){
+  $arrayPosteos=jsonToArray("posteos.json");
+  foreach($arrayPosteos as $arrayPosteo){
+
+    if($arrayPosteo["idPosteo"]>$idPosteo){
+      $idPosteo = $arrayPosteo["idPosteo"];
+    }
+  }
+  $idPosteo++;
+}
+
+$arrayPosteo=[];
+$arrayPosteo["email"]=$_SESSION["email"];
+$arrayPosteo["idPosteo"]=$idPosteo;
+$arrayPosteo["documento"]=$docs;
+$arrayPosteo["imagen"]=$imagen;
+$arrayPosteo["video"]=$video;
+$arrayPosteo["textoPosteo"]=$textoPosteo;
+$arrayPosteo["tipoPosteo"]=$tipoPosteo;
+$arrayPosteo["areaInteres"]=$areaInteres;
+$arrayPosteos[]=$arrayPosteo;
+$jsonPosteos=json_encode($arrayPosteos);
+
+file_put_contents("posteos.json",$jsonPosteos);
 
 
 }}//aca cierra la funcion CargarArchivoPosteo
 
-function Posteo(){
-if($_POST){
-$textoPosteo=$_POST['textoPosteo'];
-return $textoPosteo;
 
-}}
 
  ?>
